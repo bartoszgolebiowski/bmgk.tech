@@ -1,19 +1,19 @@
 {
-  "Menu": "Menu",
-  "Hero description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+  "Menu": "Menu",  
 
   "About us": "About us",
-  "About us description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+  "About us description": "We are software developers with experience in industrial and ambition to move automation on upper level.",
 
   "Our goals": "Our goals",
-  "Our goals description1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
-  "Our goals description2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
-  "Our goals description3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+  "Our goals description1": "Faster. We make program to speed up work.",
+  "Our goals description2": "Cheaper. Our solutions reduce costs through process automation.",
+  "Our goals description3": "Perfectly. Our software does exactly what it should do.",
 
   "Products": "Products",
   "Description": "Description",
 
   "Product1": "PLC Creator",
+
   "Product1 Description1": "Accelerate PLC writing process.",
   "Product1 Description2": "Reduction of PLC program writing costs.",
   "Product1 Description3": "Improving the quality of the PLC program.",
