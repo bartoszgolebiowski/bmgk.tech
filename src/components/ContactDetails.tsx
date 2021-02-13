@@ -1,18 +1,18 @@
 import * as React from "react";
+import { List, ListItem } from "@chakra-ui/react";
+import { withTranslation } from "../../i18n";
 
-import { Box, Center, Heading, List, ListItem } from "@chakra-ui/react";
-
-const ContactDetails = () => {
+const ContactDetails = ({ t }) => {
   return (
     <List spacing={3}>
       <ListItem>
-        <strong>Company name</strong>: BMGK
+        <strong>{t("Company name")}</strong>: BMGK
       </ListItem>
       <ListItem>
-        <strong>Email</strong>: mariusz.kaleta@bmgk.tech
+        <strong>{t("Email")}</strong>: mariusz.kaleta@bmgk.tech
       </ListItem>
     </List>
   );
 };
 
-export default ContactDetails;
+export default withTranslation()(ContactDetails);

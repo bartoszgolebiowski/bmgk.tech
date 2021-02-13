@@ -1,5 +1,5 @@
 import * as React from "react";
-
+import { TFunction } from "next-i18next";
 import { HamburgerIcon } from "@chakra-ui/icons";
 import {
   Flex,
@@ -14,31 +14,23 @@ import {
   List,
   ListItem,
 } from "@chakra-ui/react";
+import { withTranslation } from "../../../i18n";
 
 type HeaderMobileProps = {
   items: { name: string; onClick: () => void }[];
   scrollToStart: () => void;
+  t: TFunction;
 };
 
 const HeaderMobile: React.FC<HeaderMobileProps> = ({
   items,
   scrollToStart,
+  t,
 }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const _hover = { cursor: "pointer" };
   const _first = { padding: "2rem 0 0 0" };
-
-  const mobileItems = [
-    ...items,
-    {
-      name: "Contact",
-      onClick: () =>
-        document
-          .getElementById("contact")
-          .scrollIntoView({ behavior: "smooth" }),
-    },
-  ];
 
   return (
     <>
@@ -48,6 +40,11 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
         h="10vh"
         justifyContent="space-between"
         shadow="md"
+        position="fixed"
+        backgroundColor="white"
+        top="0"
+        left="0"
+        zIndex="1000"
       >
         <Flex flex="1">
           <Center w="10rem" fontSize="2rem" onClick={scrollToStart}>
@@ -70,10 +67,10 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
         <DrawerOverlay>
           <DrawerContent>
             <DrawerCloseButton />
-            <DrawerHeader>Menu</DrawerHeader>
+            <DrawerHeader>{t("Menu")}</DrawerHeader>
             <DrawerBody>
               <List spacing={12}>
-                {mobileItems.map((menuItem) => (
+                {items.map((menuItem) => (
                   <ListItem
                     key={menuItem.name}
                     _first={_first}
@@ -96,4 +93,4 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
   );
 };
 
-export default HeaderMobile;
+export default withTranslation()(HeaderMobile);

@@ -1,32 +1,16 @@
 import * as React from "react";
-import {
-  Box,
-  Button,
-  Center,
-  Divider,
-  Flex,
-  Heading,
-  Text,
-} from "@chakra-ui/react";
-import { EmailIcon, ArrowForwardIcon } from "@chakra-ui/icons";
+import { Box, Center, Divider, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
 
-const Hero = () => {
+import { withTranslation } from "../../i18n";
+
+const Hero = ({ t }) => {
   const [isMobile] = useMobileView();
-
   const fontSize = isMobile ? "2rem" : "1.2rem";
-
-  const scrollToEmail = () =>
-    document
-      .getElementById("emailContact")
-      .scrollIntoView({ behavior: "smooth" });
-
-  const scrollToCallUs = () =>
-    document.getElementById("callUs").scrollIntoView({ behavior: "smooth" });
 
   return (
     <>
-      <Box mt="2rem" mb="6rem" as="section">
+      <Box mt="7rem" mb="6rem" as="section">
         <Center>
           <Heading as="h1" size="4xl" isTruncated color="#43A047">
             BMGK.tech
@@ -48,33 +32,11 @@ const Hero = () => {
         fontSize={fontSize}
         mt="5rem"
       >
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur,
-        eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa
-        commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!
+        {t("Hero description")}
       </Text>
-      <Flex direction="row" justifyContent="space-around" mt="5rem">
-        <Button
-          leftIcon={<EmailIcon />}
-          size="lg"
-          color="#ab47bc"
-          variant="solid"
-          onClick={scrollToEmail}
-        >
-          Email
-        </Button>
-        <Button
-          size="lg"
-          rightIcon={<ArrowForwardIcon />}
-          color="#43A047"
-          variant="outline"
-          onClick={scrollToCallUs}
-        >
-          Call us
-        </Button>
-      </Flex>
       <Divider orientation="horizontal" mt="5rem" />
     </>
   );
 };
 
-export default Hero;
+export default withTranslation()(Hero);

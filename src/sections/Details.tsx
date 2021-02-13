@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
+import { withTranslation } from "../../i18n";
 
-const Details = () => {
+const Details = ({ t }) => {
   const [isMobile] = useMobileView();
 
   const minH = isMobile ? "100vh" : "60vh";
@@ -22,7 +23,7 @@ const Details = () => {
             height="10vh"
             id="ourGoals"
           >
-            Our goals
+            {t("Our goals")}
           </Heading>
         </Center>
       </Box>
@@ -35,10 +36,7 @@ const Details = () => {
             flex="1"
             fontSize={fontSize}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, eos libero, nisi unde accusantium ex perspiciatis et
-            excepturi sint ipsa commodi minima cupiditate illo dolorem maiores
-            quos ab, iure dolor!
+            {t("Our goals description1")}
           </Text>
           <Box
             backgroundImage={`url(/svg/idea1.svg)`}
@@ -61,10 +59,7 @@ const Details = () => {
             flex="1"
             fontSize={fontSize}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, eos libero, nisi unde accusantium ex perspiciatis et
-            excepturi sint ipsa commodi minima cupiditate illo dolorem maiores
-            quos ab, iure dolor!
+            {t("Our goals description2")}
           </Text>
           <Box
             backgroundImage={`url(/svg/idea3.svg)`}
@@ -83,10 +78,7 @@ const Details = () => {
             flex="1"
             fontSize={fontSize}
           >
-            Lorem ipsum dolor sit amet consectetur adipisicing elit.
-            Consectetur, eos libero, nisi unde accusantium ex perspiciatis et
-            excepturi sint ipsa commodi minima cupiditate illo dolorem maiores
-            quos ab, iure dolor!
+            {t("Our goals description3")}
           </Text>
           <Box
             backgroundImage={`url(/svg/idea2.svg)`}
@@ -102,4 +94,4 @@ const Details = () => {
   );
 };
 
-export default Details;
+export default withTranslation()(Details);

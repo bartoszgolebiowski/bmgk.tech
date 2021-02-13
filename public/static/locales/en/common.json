@@ -1,0 +1,59 @@
+{
+  "Menu": "Menu",
+  "Hero description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+
+  "About us": "About us",
+  "About us description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+
+  "Our goals": "Our goals",
+  "Our goals description1": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+  "Our goals description2": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+  "Our goals description3": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
+
+  "Products": "Products",
+  "Description": "Description",
+
+  "Product1": "PLC Creator",
+  "Product1 Description1": "Accelerate PLC writing process.",
+  "Product1 Description2": "Reduction of PLC program writing costs.",
+  "Product1 Description3": "Improving the quality of the PLC program.",
+  "Product1 Description4": "Improving the logic within the standard.",
+  "Product1 Description5": "Better and more convenient form of programming.",
+  "Product1 Description6": "Avoiding the often tedious process of copying and pasting. And related bugs.",
+  "Product1 Description7": "Facilitating the management of the program languages (generating web titles and other texts for the selected language).",
+  "Product1 Description8": "Automatic check of Eplan tag errors when importing them from an \"SDF\" file. ",
+  "Product1 Description9": "Facilitation of the programming process (reduction of required offline competencies).",
+  "Product1 Description10": "Better management of know-how for a specific technology within the standard.",
+
+  "Product2": "PLC TIA .Net Library",
+  "Product2 Description1": "Product2 Description1",
+  "Product2 Description2": "Product2 Description2",
+  "Product2 Description3": "Product2 Description3",
+  "Product2 Description4": "Product2 Description4",
+  "Product2 Description5": "Product2 Description5",
+  "Product2 Description6": "Product2 Description6",
+  "Product2 Description7": "Product2 Description7",
+  "Product2 Description8": "Product2 Description8",
+  "Product2 Description9": "Product2 Description9",
+  "Product2 Description10": "Product2 Description10",
+
+  "Contact": "Contact",
+  "Contact us": "Contact us",
+
+  "Your name": "Your name",
+  "Your name placeholder": "John Snow",
+  "Your email": "Your email",
+  "Your email placeholder": "name@company.com",
+  "Message": "Message",
+  "Message placeholder": "Hello, I am intrested in...",
+  "Email": "Email",
+  "Submit": "Submit",
+
+  "Email was sent": "Email was sent",
+  "Thank you for contacting us!": "Thank you for contacting us!",
+  "Email was not sent": "Email was not sent",
+  "Try again!": "Try again!",
+
+  "BMGK TM": "BMGK.tech ™",
+  "Company email": "mariusz.kaleta@bmgk.tech"
+}
