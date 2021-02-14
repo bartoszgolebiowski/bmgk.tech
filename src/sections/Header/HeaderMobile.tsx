@@ -15,6 +15,7 @@ import {
   ListItem,
 } from "@chakra-ui/react";
 import { withTranslation } from "../../../i18n";
+import LanguageSelect from "../../components/LanguageSelect";
 
 type HeaderMobileProps = {
   items: { name: string; onClick: () => void }[];
@@ -69,6 +70,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
             <DrawerCloseButton />
             <DrawerHeader>{t("Menu")}</DrawerHeader>
             <DrawerBody>
+              <LanguageSelect onSubmit={onClose}/>
               <List spacing={12}>
                 {items.map((menuItem) => (
                   <ListItem
@@ -77,7 +79,6 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
                     _hover={_hover}
                     fontSize="1.5rem"
                     onClick={() => {
-                      onClose();
                       menuItem.onClick();
                     }}
                   >

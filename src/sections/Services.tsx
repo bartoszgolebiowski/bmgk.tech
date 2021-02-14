@@ -4,7 +4,7 @@ import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
 import { withTranslation } from "../../i18n";
 
-const AboutUs = ({ t }) => {
+const Services = ({ t }) => {
   const [isMobile] = useMobileView();
 
   const minH = isMobile ? "100vh" : "60vh";
@@ -22,16 +22,16 @@ const AboutUs = ({ t }) => {
             isTruncated
             color="#43A047"
             height="10vh"
-            id="aboutUs"
+            id="services"
           >
-            {t("About us")}
+            {t("Services")}
           </Heading>
         </Center>
       </Box>
       <Center display="flex" flexDirection={"column"}>
         <Flex flexDirection={flexDirection} minH={minH} m={m}>
           <Box
-            backgroundImage={`url(/svg/aboutUs.svg)`}
+            backgroundImage={`url(/svg/services.svg)`}
             objectFit="contain"
             backgroundRepeat="no-repeat"
             backgroundSize="100% 100%"
@@ -45,7 +45,7 @@ const AboutUs = ({ t }) => {
             mt="2rem"
             fontSize={fontSize}
           >
-            {t("About us description")}
+            {t("Services description")}
           </Text>
         </Flex>
       </Center>
@@ -54,4 +54,4 @@ const AboutUs = ({ t }) => {
   );
 };
 
-export default withTranslation()(AboutUs);
+export default withTranslation()(Services);

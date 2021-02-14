@@ -7,6 +7,7 @@ module.exports = new NextI18Next({
   namespacesRequired: ["common"],
   localeSubpaths: {
     en: "en",
+    pl: "pl",
   },
   localePath: path.resolve("./public/static/locales"),
 });

@@ -1,6 +1,6 @@
 {
-  "Menu": "Menu",  
-
+  "Menu": "Menu",
+  "Welcome": "WE DO IT",
   "About us": "About us",
   "About us description": "We are software developers with experience in industrial and ambition to move automation on upper level.",
 
@@ -8,6 +8,9 @@
   "Our goals description1": "Faster. We make program to speed up work.",
   "Our goals description2": "Cheaper. Our solutions reduce costs through process automation.",
   "Our goals description3": "Perfectly. Our software does exactly what it should do.",
+
+  "Services": "Services",
+  "Services description": "Lorem ipsum dolor sit amet consectetur adipisicing elit. Consectetur, eos libero, nisi unde accusantium ex perspiciatis et excepturi sint ipsa commodi minima cupiditate illo dolorem maiores quos ab, iure dolor!",
 
   "Products": "Products",
   "Description": "Description",

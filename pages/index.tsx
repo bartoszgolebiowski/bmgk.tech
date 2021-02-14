@@ -8,9 +8,10 @@ import Details from "../src/sections/Details";
 import Products from "../src/sections/Products";
 import Contact from "../src/sections/Contact";
 import AboutUs from "../src/sections/AboutUs";
+import Footer from "../src/sections/Footer";
 
 import { withTranslation, i18n } from "../i18n";
-import Footer from "../src/sections/Footer";
+import Services from "../src/sections/Services";
 
 function Home({ t }) {
   return (
@@ -24,6 +25,7 @@ function Home({ t }) {
         <Hero />
         <AboutUs />
         <Details />
+        <Services />
         <Products />
         <Contact />
       </Container>

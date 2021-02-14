@@ -1,6 +1,6 @@
 import * as React from "react";
 
-const MOBILE_WIDTH = 1000;
+const MOBILE_WIDTH = 1100;
 
 const useMobileView = () => {
   const [state, setState] = React.useState(false);

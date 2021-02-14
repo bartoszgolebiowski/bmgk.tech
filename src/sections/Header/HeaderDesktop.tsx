@@ -1,6 +1,8 @@
 import * as React from "react";
 import { TFunction } from "next-i18next";
 import { Center, Flex } from "@chakra-ui/react";
+
+import LanguageSelect from "../../components/LanguageSelect";
 import { withTranslation } from "../../../i18n";
 
 const _hover = { cursor: "pointer" };
@@ -37,10 +39,10 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
           <img src={require("../../assets/BMGK.svg")} alt="BMGK Logo" />
         </Center>
       </Flex>
-      <Flex flex="3" direction="row" justifyContent="center">
+      <Flex flex="3" direction="row" justifyContent="center" shrink="revert">
         {items.map((menuItem) => (
           <Center
-            w="10rem"
+            w="7rem"
             _hover={_hover}
             key={menuItem.name}
             onClick={menuItem.onClick}
@@ -50,6 +52,9 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
         ))}
       </Flex>
       <Flex flex="1" justifyContent="flex-end">
+        <Center _hover={_hover}>
+          <LanguageSelect />
+        </Center>
         <Center w="10rem" _hover={_hover} onClick={scrollToContact}>
           {t("Contact")}
         </Center>

@@ -1,5 +1,5 @@
 import { Center, Flex, Text } from "@chakra-ui/react";
-import React from "react";
+import * as React from "react";
 import { withTranslation } from "../../i18n";
 
 const Footer = ({ t }) => {

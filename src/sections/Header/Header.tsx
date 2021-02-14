@@ -8,10 +8,24 @@ import { withTranslation } from "../../../i18n";
 
 const menu = (t: TFunction) => [
   {
+    name: t("About us"),
+    onClick: () => {
+      document.getElementById("aboutUs").scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  {
     name: t("Our goals"),
     onClick: () => {
       document
         .getElementById("ourGoals")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+  },
+  {
+    name: t("Services"),
+    onClick: () => {
+      document
+        .getElementById("services")
         .scrollIntoView({ behavior: "smooth" });
     },
   },
