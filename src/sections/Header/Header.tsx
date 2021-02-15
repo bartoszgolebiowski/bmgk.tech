@@ -14,14 +14,6 @@ const menu = (t: TFunction) => [
     },
   },
   {
-    name: t("Our goals"),
-    onClick: () => {
-      document
-        .getElementById("ourGoals")
-        .scrollIntoView({ behavior: "smooth" });
-    },
-  },
-  {
     name: t("Services"),
     onClick: () => {
       document
@@ -29,6 +21,15 @@ const menu = (t: TFunction) => [
         .scrollIntoView({ behavior: "smooth" });
     },
   },
+  {
+    name: t("Our goals"),
+    onClick: () => {
+      document
+        .getElementById("ourGoals")
+        .scrollIntoView({ behavior: "smooth" });
+    },
+  },
+
   {
     name: t("Products"),
     onClick: () => {

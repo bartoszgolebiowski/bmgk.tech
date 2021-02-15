@@ -1,8 +1,8 @@
-import { Center, Flex, Text } from "@chakra-ui/react";
 import * as React from "react";
-import { withTranslation } from "../../i18n";
+import { Center, Flex, Text } from "@chakra-ui/react";
+import { withTranslation } from "../../../i18n";
 
-const Footer = ({ t }) => {
+const FooterDesktop = ({ t }) => {
   return (
     <Flex
       direction="row"
@@ -16,7 +16,7 @@ const Footer = ({ t }) => {
     >
       <Center color="white">
         <Text width="5rem">
-          <img src={require("../assets/BMGK.svg")} alt={"Logo"} />
+          <img src={require("../../assets/BMGK.svg")} alt={"Logo"} />
         </Text>
         <Text padding="0 2rem">{t("BMGK TM")}</Text>
         <Text padding="0 2rem">{t("Company email")}</Text>
@@ -27,11 +27,11 @@ const Footer = ({ t }) => {
           target="_blank"
           color="white"
         >
-          <img src={require("../assets/linkedin.svg")} alt={"Linkedin"} />
+          <img src={require("../../assets/linkedin.svg")} alt={"Linkedin"} />
         </Text>
       </Center>
     </Flex>
   );
 };
 
-export default withTranslation()(Footer);
+export default withTranslation()(FooterDesktop);

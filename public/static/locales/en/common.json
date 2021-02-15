@@ -1,13 +1,16 @@
 {
-  "Menu": "Menu",  
+  "Menu": "Menu",
   "Welcome": "WE DO IT",
   "About us": "About us",
   "About us description": "We are software developers with experience in industrial and ambition to move automation on upper level. We create technological solutions that help you use your full potential.",
 
   "Our goals": "Our goals",
-  "Our goals description1": "Respect Time\\ \\Our software minimizes input and maximizes output. We want everything we do to be optimal, and the effect to include everything possible.",
-  "Our goals description2": "Modern Look\\ \\We want our software to be easy to use. We make the applications ergonomic, because we know how important it is for the work to be light and pleasant.",
-  "Our goals description3": "Universal\\ \\We don't like restrictions. We want our software to be as powerful as possible. We prepare a place for development so that new goals can be achieved.",
+  "Our goals description1Title": "Respect Time",
+  "Our goals description2Title": "Modern Look",
+  "Our goals description3Title": "Universal",
+  "Our goals description1": "Our software minimizes input and maximizes output. We want everything we do to be optimal, and the effect to include everything possible.",
+  "Our goals description2": "We want our software to be easy to use. We make the applications ergonomic, because we know how important it is for the work to be light and pleasant.",
+  "Our goals description3": "We don't like restrictions. We want our software to be as powerful as possible. We prepare a place for development so that new goals can be achieved.",
 
   "Services": "Services",
   "Services description": "We are creating SOFTWARE for industry and individual clients, websites, window applications. We program PLC controllers and create integrated master systems.",
@@ -16,7 +19,7 @@
   "Description": "Description",
 
   "Product1": "PLC Creator",
-
+  "Product1 Description": "PLC Creator",
   "Product1 Description1": "Accelerate PLC writing process.",
   "Product1 Description2": "Reduction of PLC program writing costs.",
   "Product1 Description3": "Improving the quality of the PLC program.",
@@ -29,16 +32,11 @@
   "Product1 Description10": "Better management of know-how for a specific technology within the standard.",
 
   "Product2": "PLC TIA .Net Library",
+  "Product2 Description": "PLC Creator",
   "Product2 Description1": "Static typed Library writed in .NET standard",
   "Product2 Description2": "Full support for TIA Portal Openness",
   "Product2 Description3": "Library allow you write PLC code in C#",
   "Product2 Description4": "Support for import Tia Library for C# class format",
-  "Product2 Description5": "Product2 Description5",
-  "Product2 Description6": "Product2 Description6",
-  "Product2 Description7": "Product2 Description7",
-  "Product2 Description8": "Product2 Description8",
-  "Product2 Description9": "Product2 Description9",
-  "Product2 Description10": "Product2 Description10",
 
   "Contact": "Contact",
   "Contact us": "Contact us",

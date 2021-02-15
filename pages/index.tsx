@@ -8,7 +8,7 @@ import Details from "../src/sections/Details";
 import Products from "../src/sections/Products";
 import Contact from "../src/sections/Contact";
 import AboutUs from "../src/sections/AboutUs";
-import Footer from "../src/sections/Footer";
+import Footer from "../src/sections/Footer/Footer";
 
 import { withTranslation, i18n } from "../i18n";
 import Services from "../src/sections/Services";
@@ -24,8 +24,8 @@ function Home({ t }) {
       <Container as="main" maxW="100ch" id="start">
         <Hero />
         <AboutUs />
-        <Details />
         <Services />
+        <Details />
         <Products />
         <Contact />
       </Container>

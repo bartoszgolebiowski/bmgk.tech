@@ -7,6 +7,7 @@ import { withTranslation } from "../../i18n";
 
 const product1 = {
   title: "Product1",
+  subTitle: "Product1 Description",
   Logo: () => (
     <Center w="10rem" _hover={_hover} margin="2rem auto">
       <a href="https://vass6plccreator.bmgk.tech/" target="_blank">
@@ -33,6 +34,7 @@ const product1 = {
 
 const product2 = {
   title: "Product2",
+  subTitle: "Product2 Description",
   Logo: () => (
     <Center w="10rem" _hover={_hover} margin="2rem auto">
       <a href="https://vass6plccreator.bmgk.tech/" target="_blank">
@@ -45,12 +47,6 @@ const product2 = {
     "Product2 Description2",
     "Product2 Description3",
     "Product2 Description4",
-    "Product2 Description5",
-    "Product2 Description6",
-    "Product2 Description7",
-    "Product2 Description8",
-    "Product2 Description9",
-    "Product2 Description10",
   ],
 };
 
@@ -75,8 +71,13 @@ const Products = ({ t }) => {
           </Heading>
         </Center>
       </Box>
-      {products.map(({ title, items, Logo }) => (
-        <ProductItem key={title} title={title} items={items}>
+      {products.map(({ title, items, subTitle, Logo }) => (
+        <ProductItem
+          key={title}
+          title={title}
+          items={items}
+          subTitle={subTitle}
+        >
           <Logo />
         </ProductItem>
       ))}

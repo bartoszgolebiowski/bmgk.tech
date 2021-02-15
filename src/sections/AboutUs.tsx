@@ -30,23 +30,22 @@ const AboutUs = ({ t }) => {
       </Box>
       <Center display="flex" flexDirection={"column"}>
         <Flex flexDirection={flexDirection} minH={minH} m={m}>
-          <Box
+          <Flex
             backgroundImage={`url(/svg/aboutUs.svg)`}
             objectFit="contain"
             backgroundRepeat="no-repeat"
             backgroundSize="100% 100%"
             flex="2"
           />
-          <Text
-            size="xl"
-            textAlign="center"
-            justifyContent="center"
-            flex="1"
-            mt="2rem"
-            fontSize={fontSize}
-          >
-            {t("About us description")}
-          </Text>
+          <Flex flex="1" margin="auto 0">
+            <Text
+              textAlign="center"
+              justifyContent="center"
+              fontSize={fontSize}
+            >
+              {t("About us description")}
+            </Text>
+          </Flex>
         </Flex>
       </Center>
       <Divider />

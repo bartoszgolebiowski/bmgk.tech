@@ -37,16 +37,15 @@ const Services = ({ t }) => {
             backgroundSize="100% 100%"
             flex="2"
           />
-          <Text
-            size="xl"
-            textAlign="center"
-            justifyContent="center"
-            flex="1"
-            mt="2rem"
-            fontSize={fontSize}
-          >
-            {t("Services description")}
-          </Text>
+          <Flex flex="1" margin="auto 0">
+            <Text
+              textAlign="center"
+              justifyContent="center"
+              fontSize={fontSize}
+            >
+              {t("Services description")}
+            </Text>
+          </Flex>
         </Flex>
       </Center>
       <Divider />

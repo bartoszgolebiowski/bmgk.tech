@@ -70,7 +70,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
             <DrawerCloseButton />
             <DrawerHeader>{t("Menu")}</DrawerHeader>
             <DrawerBody>
-              <LanguageSelect onSubmit={onClose}/>
+              <LanguageSelect onSubmit={onClose} />
               <List spacing={12}>
                 {items.map((menuItem) => (
                   <ListItem
@@ -79,6 +79,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
                     _hover={_hover}
                     fontSize="1.5rem"
                     onClick={() => {
+                      onClose();
                       menuItem.onClick();
                     }}
                   >

@@ -29,15 +29,24 @@ const Details = ({ t }) => {
       </Box>
       <Center display="flex" flexDirection={"column"}>
         <Flex flexDirection={flexDirection} minH={minH} m={m}>
-          <Text
-            size="xl"
-            textAlign="center"
-            justifyContent="center"
-            flex="1"
-            fontSize={fontSize}
-          >
-            {t("Our goals description1")}
-          </Text>
+          <Flex flex="1" margin="auto 2rem">
+            <Text
+              textAlign="center"
+              justifyContent="center"
+              fontSize={fontSize}
+            >
+              <Text
+                fontSize="4xl"
+                textAlign="center"
+                justifyContent="center"
+                fontWeight="bold"
+                mb="1rem"
+              >
+                {t("Our goals description1Title")}
+              </Text>
+              {t("Our goals description1")}
+            </Text>
+          </Flex>
           <Box
             backgroundImage={`url(/svg/idea1.svg)`}
             objectFit="contain"
@@ -52,15 +61,24 @@ const Details = ({ t }) => {
           m={m}
           flexDirection={!isMobile ? "row-reverse" : "column"}
         >
-          <Text
-            size="xl"
-            textAlign="center"
-            justifyContent="center"
-            flex="1"
-            fontSize={fontSize}
-          >
-            {t("Our goals description2")}
-          </Text>
+          <Flex flex="1" margin="auto 0">
+            <Text
+              textAlign="center"
+              justifyContent="center"
+              fontSize={fontSize}
+            >
+              <Text
+                fontSize="4xl"
+                textAlign="center"
+                justifyContent="center"
+                fontWeight="bold"
+                mb="1rem"
+              >
+                {t("Our goals description2Title")}
+              </Text>
+              {t("Our goals description2")}
+            </Text>
+          </Flex>
           <Box
             backgroundImage={`url(/svg/idea3.svg)`}
             objectFit="contain"
@@ -71,15 +89,24 @@ const Details = ({ t }) => {
         </Flex>
         <Divider orientation="horizontal" mt="1rem" />
         <Flex flexDirection={flexDirection} minH={minH} m={m}>
-          <Text
-            size="xl"
-            textAlign="center"
-            justifyContent="center"
-            flex="1"
-            fontSize={fontSize}
-          >
-            {t("Our goals description3")}
-          </Text>
+          <Flex flex="1" margin="auto 0">
+            <Text
+              textAlign="center"
+              justifyContent="center"
+              fontSize={fontSize}
+            >
+              <Text
+                fontSize="4xl"
+                textAlign="center"
+                justifyContent="center"
+                fontWeight="bold"
+                mb="1rem"
+              >
+                {t("Our goals description3Title")}
+              </Text>
+              {t("Our goals description3")}
+            </Text>
+          </Flex>
           <Box
             backgroundImage={`url(/svg/idea2.svg)`}
             backgroundRepeat="no-repeat"
