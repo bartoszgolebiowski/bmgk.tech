@@ -28,7 +28,6 @@ const product1 = {
     "Product1 Description7",
     "Product1 Description8",
     "Product1 Description9",
-    "Product1 Description10",
   ],
 };
 
@@ -50,7 +49,7 @@ const product2 = {
   ],
 };
 
-const products = [product1, product2];
+const products = [ product2, product1];
 
 const _hover = { cursor: "pointer" };
 
