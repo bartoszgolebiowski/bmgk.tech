@@ -20,15 +20,10 @@ const ProductItem = ({ t, title, items, children, subTitle }) => {
             {t(title)}
           </Heading>
         </Center>
-        <Center>
-          <Heading as="h3" fontSize="2rem" isTruncated mt="1rem">
-            {t(subTitle)}
-          </Heading>
-        </Center>
         {children}
         <Center>
-          <Heading as="h4" size="2xl" isTruncated height="10vh">
-            {t("Description")}
+          <Heading as="h3" fontSize="1.5rem" mt="1rem" mb="2rem">
+            {t(subTitle)}
           </Heading>
         </Center>
       </Box>
