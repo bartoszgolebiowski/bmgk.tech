@@ -15,7 +15,7 @@
   "Our goals description3": "We don't like restrictions. We want our software to be as powerful as possible. We prepare a place for development so that new goals can be achieved.",
 
   "Services": "Services",
-  "Services description": "We are creating software for industry and individual clients, websites, window applications. We program PLC controllers and create integrated master systems.",
+  "Services description": "We are creating software for industry and individual clients, websites, window applications. We program PLC and we create high-level macros for them. On the end, we connect everything together to form integrated master systems.",
 
   "Products": "Products",
 
@@ -29,11 +29,11 @@
   "Product1": "VASS6 PLC Creator",
   "Product1 Description": "App created with 'PLC TIA .Net Library' for generating PLC code for VASS6 Standard.",
   "Product1 Description1": "Speeds up the PLC writing process.",
-  "Product1 Description2": "Improving the quality of the PLC program.",
+  "Product1 Description2": "Better and more convenient form of programming.",
   "Product1 Description3": "Reduction of PLC program writing costs.",
-  "Product1 Description4": "Better and more convenient form of programming.",
-  "Product1 Description5": "Improving the quality of logic within the standard.",
-  "Product1 Description6": "Avoids the often and tedious process of copying and pasting and the associated errors.",
+  "Product1 Description4": "Improving the quality of logic within the standard.",
+  "Product1 Description5": "Avoids the often and tedious process of copying and pasting and the associated errors.",
+  "Product1 Description6": "Improving the quality of the PLC program.",
   "Product1 Description7": "Facilitating the management of the program languages (generating web titles and other texts in standardized forms).",
   "Product1 Description8": "Better management of know-how for a specific technology within the standard.",
   "Product1 Description9": "Facilitation of the programming process (reduction of required offline competencies).",
