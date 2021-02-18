@@ -4,7 +4,7 @@
   "About us": "O Nas",
   "About us description": "Jesteśmy programistami z doświadczeniem w przemyśle i ambicją przeniesienia automatyzacji na wyższy poziom. Tworzymy rozwiązania technologiczne, które pozwolą Ci w pełni wykorzystać Twój potencjał.",
 
-  "Our goals": "Nasze Cele",
+  "Our goals": "Nasze Wartośći",
   "Our goals description1Title": "Szanujemy Czas",
   "Our goals description1": "Nasze oprogramowanie minimalizuje nakłady i maksymalizuje wydajność. Chcemy, aby wszystko, co robimy, było optymalne, a efekt zawierał wszystko, co możliwe.",
   
@@ -12,10 +12,10 @@
   "Our goals description2": "Chcemy, aby nasze oprogramowanie było łatwe w użyciu. Sprawiamy, aby nasze aplikacje były ergonomiczne. Wiemy, jak ważne jest, aby praca była lekka, łatwa i przyjemna.",
   
   "Our goals description3Title": "Uniwersalność",
-  "Our goals description3": "Nie lubimy ograniczeń. Chcemy, aby możliwosći naszego oprogramowanie były tak szerokie, jak to tylko możliwe. Przygotowujemy miejsce do rozwoju na przyszłość, dla kolejnych funkcji.",
+  "Our goals description3": "Nie lubimy ograniczeń. Chcemy, aby możliwosći naszego oprogramowania były tak szerokie, jak to tylko możliwe. Przygotowujemy miejsce do rozwoju na przyszłość, dla kolejnych funkcji.",
 
   "Services": "Usługi",
-  "Services description": "Tworzymy OPROGRAMOWANIE dla klientów przemysłowych i indywidualnych, strony internetowe, aplikacje okienkowe. Programujemy sterowniki PLC i łączymy wszystko razem tworząc zintegrowane systemy.",
+  "Services description": "Tworzymy oprogramowanie dla klientów przemysłowych i indywidualnych, strony internetowe, aplikacje okienkowe, programujemy sterowniki PLC jak i tworzymy dla nich wysokopoziomowe makra. Na końcu łączymy to wszystko razem tworząc zintegrowane systemy nadrzędne.",
 
   "Products": "Produkty",
   "Description": "CO TO REMOVE IT",
@@ -28,14 +28,14 @@
   "Product2 Description4": "Wsparcie dla konwersji biblioteki Tia projektu do formatu klas C#.",
 
   "Product1": "VASS6 PLC Creator",
-  "Product1 Description": "Aplikacja stworzona za pomocą biblioteki 'PLC TIA .Net' do generowania kodu dla standardu VASS6.",
+  "Product1 Description": "Aplikacja stworzona za pomocą biblioteki 'PLC TIA .Net'. Służąca do generowania kodu PLC dla standardu VASS6.",
   "Product1 Description1": "Przyspiesza proces pisania PLC.",
-  "Product1 Description2": "Poprawa jakości programu PLC.",
+  "Product1 Description2": "Lepsza i wygodniejsza forma programowania.",
   "Product1 Description3": "Redukcja kosztów pisania programu PLC.",
-  "Product1 Description4": "Lepsza i wygodniejsza forma programowania.",
-  "Product1 Description5": "Poprawa jakośći logiki w ramach standardu.",
-  "Product1 Description6": "Pozwala na uniknięcie często i żmudnego procesu kopiowania i wklejania oraz powiązanych z tym błędów.",
-  "Product1 Description7": "Ułatwienie zarządzania językami programu (generowanie tytułów stron internetowych i innych tekstów w standardowych formach).",
+  "Product1 Description4": "Pozwala na uniknięcie często i żmudnego procesu kopiowania i wklejania oraz powiązanych z tym błędów.",
+  "Product1 Description5": "Poprawia jakości programu PLC.",
+  "Product1 Description6": "Ułatwienie zarządzania językami programu (generowanie tytułów stron internetowych i innych tekstów w standardowych formach).",
+  "Product1 Description7": "Poprawa jakośći logiki w ramach standardu.",
   "Product1 Description8": "Lepsze zarządzanie know-how dla określonej technologii w ramach standardu.",
   "Product1 Description9": "Ułatwienie procesu programowania przez redukcje wymaganych kompetencji offline.",
 
