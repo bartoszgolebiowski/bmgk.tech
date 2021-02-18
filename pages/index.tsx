@@ -3,7 +3,7 @@ import Head from "next/head";
 import { Container } from "@chakra-ui/react";
 
 import Hero from "../src/sections/Hero";
-import Header, { sectionsIds } from "../src/sections/Header/Header";
+import Header from "../src/sections/Header/Header";
 import Details from "../src/sections/Details";
 import Products from "../src/sections/Products";
 import Contact from "../src/sections/Contact";
