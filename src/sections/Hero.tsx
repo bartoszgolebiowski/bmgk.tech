@@ -1,11 +1,13 @@
 import * as React from "react";
 import { Box, Center, Divider, Heading } from "@chakra-ui/react";
-import { withTranslation } from "../../i18n";
+import { useTranslation } from "../../i18n";
 
-const Hero = ({ t }) => {
+const Hero = React.forwardRef<HTMLDivElement>((props, ref) => {
+  const { t } = useTranslation();
+
   return (
     <>
-      <Box mt="7rem" mb="6rem" as="section">
+      <Box mt="7rem" mb="6rem" as="section" ref={ref}>
         <Center>
           <Heading as="h1" size="4xl" isTruncated color="#43A047">
             {t("Welcome")}
@@ -22,6 +24,6 @@ const Hero = ({ t }) => {
       <Divider orientation="horizontal" mt="5rem" />
     </>
   );
-};
+});
 
-export default withTranslation()(Hero);
+export default Hero;

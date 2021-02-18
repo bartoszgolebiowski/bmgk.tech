@@ -2,9 +2,12 @@ import * as React from "react";
 import { Box, Center, Heading, Divider } from "@chakra-ui/react";
 
 import ProductDescriptionList from "./ProductDescriptionList";
-import { withTranslation } from "../../i18n";
+import { useTranslation } from "../../i18n";
 
-const ProductItem = ({ t, title, items, children, subTitle }) => {
+const _hover = { textDecoration: "underline" };
+const ProductItem = ({ title, items, children, subTitle, titleHref }) => {
+  const { t } = useTranslation();
+
   return (
     <React.Fragment>
       <Box mt="2rem">
@@ -17,7 +20,9 @@ const ProductItem = ({ t, title, items, children, subTitle }) => {
             height="10vh"
             id="plcCreator"
           >
-            {t(title)}
+            <Box as="a" href={titleHref} target="_blank" _hover={_hover}>
+              {t(title)}
+            </Box>
           </Heading>
         </Center>
         {children}
@@ -33,4 +38,4 @@ const ProductItem = ({ t, title, items, children, subTitle }) => {
   );
 };
 
-export default withTranslation()(ProductItem);
+export default ProductItem;

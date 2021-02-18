@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Flex, Text } from "@chakra-ui/react";
-import { withTranslation } from "../../../i18n";
+import { useTranslation } from "../../../i18n";
 
-const FooterMobile = ({ t }) => {
+const FooterMobile = () => {
+  const { t } = useTranslation();
   return (
     <Flex
       direction="column"
@@ -37,4 +38,4 @@ const FooterMobile = ({ t }) => {
   );
 };
 
-export default withTranslation()(FooterMobile);
+export default FooterMobile;

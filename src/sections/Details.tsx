@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
-import { withTranslation } from "../../i18n";
+import { useTranslation } from "../../i18n";
 
-const Details = ({ t }) => {
+const Details = React.forwardRef<HTMLDivElement>((props, ref) => {
+  const { t } = useTranslation();
   const [isMobile] = useMobileView();
 
   const minH = isMobile ? "100vh" : "60vh";
@@ -12,17 +13,17 @@ const Details = ({ t }) => {
   const flexDirection = isMobile ? "column" : "row";
 
   return (
-    <Box mt="2rem" mb="6rem" as="section" flexDirection="column">
+    <Box
+      mt="2rem"
+      mb="6rem"
+      as="section"
+      flexDirection="column"
+      id="ourGoals"
+      ref={ref}
+    >
       <Box mt="2rem">
         <Center>
-          <Heading
-            as="h2"
-            size="3xl"
-            isTruncated
-            color="#43A047"
-            height="10vh"
-            id="ourGoals"
-          >
+          <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
             {t("Our goals")}
           </Heading>
         </Center>
@@ -119,6 +120,6 @@ const Details = ({ t }) => {
       </Center>
     </Box>
   );
-};
+});
 
-export default withTranslation()(Details);
+export default Details;

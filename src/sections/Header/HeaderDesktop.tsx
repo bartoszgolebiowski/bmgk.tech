@@ -1,25 +1,24 @@
 import * as React from "react";
-import { TFunction } from "next-i18next";
 import { Center, Flex } from "@chakra-ui/react";
 
 import LanguageSelect from "../../components/LanguageSelect";
-import { withTranslation } from "../../../i18n";
+import { useTranslation } from "../../../i18n";
 
 const _hover = { cursor: "pointer" };
+
+const scrollToContact = () =>
+  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
 
 type HeaderDesktopProps = {
   items: { name: string; onClick: () => void }[];
   scrollToStart: () => void;
-  t: TFunction;
 };
 
 const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
   items,
   scrollToStart,
-  t,
 }) => {
-  const scrollToContact = () =>
-    document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
+  const { t } = useTranslation();
 
   return (
     <Flex
@@ -63,4 +62,4 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
   );
 };
 
-export default withTranslation()(HeaderDesktop);
+export default HeaderDesktop;

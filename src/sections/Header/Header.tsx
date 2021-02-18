@@ -4,13 +4,15 @@ import { TFunction } from "next-i18next";
 import HeaderDesktop from "./HeaderDesktop";
 import HeaderMobile from "./HeaderMobile";
 import useMobileView from "../../utils/hooks/useMobileView";
-import { withTranslation } from "../../../i18n";
+import { useTranslation } from "../../../i18n";
 
 const menu = (t: TFunction) => [
   {
     name: t("About us"),
     onClick: () => {
-      document.getElementById("aboutUs").scrollIntoView({ behavior: "smooth" });
+      document
+        .getElementById("aboutUs")
+        .scrollIntoView({ behavior: "smooth", inline: "start" });
     },
   },
   {
@@ -18,7 +20,7 @@ const menu = (t: TFunction) => [
     onClick: () => {
       document
         .getElementById("services")
-        .scrollIntoView({ behavior: "smooth" });
+        .scrollIntoView({ behavior: "smooth", inline: "start" });
     },
   },
   {
@@ -26,7 +28,7 @@ const menu = (t: TFunction) => [
     onClick: () => {
       document
         .getElementById("ourGoals")
-        .scrollIntoView({ behavior: "smooth" });
+        .scrollIntoView({ behavior: "smooth", inline: "start" });
     },
   },
 
@@ -35,7 +37,7 @@ const menu = (t: TFunction) => [
     onClick: () => {
       document
         .getElementById("products")
-        .scrollIntoView({ behavior: "smooth" });
+        .scrollIntoView({ behavior: "smooth", inline: "start" });
     },
   },
 ];
@@ -45,11 +47,14 @@ const menuMobile = (t: TFunction) => [
   {
     name: t("Contact"),
     onClick: () =>
-      document.getElementById("contact").scrollIntoView({ behavior: "smooth" }),
+      document
+        .getElementById("contact")
+        .scrollIntoView({ behavior: "smooth", inline: "start" }),
   },
 ];
 
-const Header = ({ t }) => {
+const Header: React.FC = () => {
+  const { t } = useTranslation();
   const [isMobileView] = useMobileView();
   const scrollToStart = () => window.scrollTo({ top: 0, behavior: "smooth" });
 
@@ -60,4 +65,4 @@ const Header = ({ t }) => {
   );
 };
 
-export default withTranslation()(Header);
+export default Header;

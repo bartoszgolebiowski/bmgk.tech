@@ -11,7 +11,7 @@ import {
 import { EmailIcon } from "@chakra-ui/icons";
 import { TFunction } from "next-i18next";
 
-import { withTranslation } from "../../i18n";
+import { useTranslation } from "../../i18n";
 
 const success = (t: TFunction) => ({
   title: t("Email was sent"),
@@ -29,7 +29,8 @@ const failure = (t: TFunction) => ({
   isClosable: true,
 });
 
-const ContactForm = ({ t }) => {
+const ContactForm = () => {
+  const { t } = useTranslation();
   const toast = useToast();
   const form = React.useRef<HTMLFormElement | null>(null);
 
@@ -101,4 +102,4 @@ const ContactForm = ({ t }) => {
   );
 };
 
-export default withTranslation()(ContactForm);
+export default ContactForm;

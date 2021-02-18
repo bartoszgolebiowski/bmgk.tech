@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Center, Flex, Text } from "@chakra-ui/react";
-import { withTranslation } from "../../../i18n";
+import { useTranslation } from "../../../i18n";
 
-const FooterDesktop = ({ t }) => {
+const FooterDesktop = () => {
+  const { t } = useTranslation();
+
   return (
     <Flex
       direction="row"
@@ -34,4 +36,4 @@ const FooterDesktop = ({ t }) => {
   );
 };
 
-export default withTranslation()(FooterDesktop);
+export default FooterDesktop;
