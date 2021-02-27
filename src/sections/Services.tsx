@@ -4,7 +4,7 @@ import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
 import { useTranslation } from "../../i18n";
 
-const Services = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Services = () => {
   const { t } = useTranslation();
   const [isMobile] = useMobileView();
 
@@ -20,7 +20,6 @@ const Services = React.forwardRef<HTMLDivElement>((props, ref) => {
       as="section"
       flexDirection="column"
       id="services"
-      ref={ref}
     >
       <Box mt="2rem">
         <Center>
@@ -52,6 +51,6 @@ const Services = React.forwardRef<HTMLDivElement>((props, ref) => {
       <Divider />
     </Box>
   );
-});
+}
 
 export default Services;

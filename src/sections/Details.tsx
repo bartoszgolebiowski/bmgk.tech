@@ -2,8 +2,9 @@ import * as React from "react";
 import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
 import { useTranslation } from "../../i18n";
+import Transition, { rightAnimation } from "../components/Transition";
 
-const Details = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Details = () => {
   const { t } = useTranslation();
   const [isMobile] = useMobileView();
 
@@ -13,113 +14,121 @@ const Details = React.forwardRef<HTMLDivElement>((props, ref) => {
   const flexDirection = isMobile ? "column" : "row";
 
   return (
-    <Box
-      mt="2rem"
-      mb="6rem"
-      as="section"
-      flexDirection="column"
-      id="ourGoals"
-      ref={ref}
-    >
-      <Box mt="2rem">
-        <Center>
-          <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
-            {t("Our goals")}
-          </Heading>
-        </Center>
-      </Box>
+    <Box mt="2rem" mb="6rem" as="section" flexDirection="column" id="ourGoals">
+      <Transition {...rightAnimation}>
+        <Box mt="2rem">
+          <Center>
+            <Heading
+              as="h2"
+              size="3xl"
+              isTruncated
+              color="#43A047"
+              height="10vh"
+            >
+              {t("Our goals")}
+            </Heading>
+          </Center>
+        </Box>
+      </Transition>
       <Center display="flex" flexDirection={"column"}>
-        <Flex flexDirection={flexDirection} minH={minH} m={m}>
-          <Flex flex="1" margin="auto 2rem">
-            <Text
-              textAlign="center"
-              justifyContent="center"
-              fontSize={fontSize}
-            >
+        <Transition>
+          <Flex flexDirection={flexDirection} minH={minH} m={m}>
+            <Flex flex="1" margin="auto 2rem">
               <Text
-                fontSize="4xl"
                 textAlign="center"
                 justifyContent="center"
-                fontWeight="bold"
-                mb="1rem"
+                fontSize={fontSize}
               >
-                {t("Our goals description1Title")}
+                <Text
+                  fontSize="4xl"
+                  textAlign="center"
+                  justifyContent="center"
+                  fontWeight="bold"
+                  mb="1rem"
+                >
+                  {t("Our goals description1Title")}
+                </Text>
+                {t("Our goals description1")}
               </Text>
-              {t("Our goals description1")}
-            </Text>
+            </Flex>
+            <Box
+              backgroundImage={`url(/svg/idea1.svg)`}
+              objectFit="contain"
+              backgroundRepeat="no-repeat"
+              backgroundSize="100% 100%"
+              flex="2"
+            />
           </Flex>
-          <Box
-            backgroundImage={`url(/svg/idea1.svg)`}
-            objectFit="contain"
-            backgroundRepeat="no-repeat"
-            backgroundSize="100% 100%"
-            flex="2"
-          />
-        </Flex>
-        <Divider orientation="horizontal" mt="1rem" />
-        <Flex
-          minH={minH}
-          m={m}
-          flexDirection={!isMobile ? "row-reverse" : "column"}
-        >
-          <Flex flex="1" margin="auto 0">
-            <Text
-              textAlign="center"
-              justifyContent="center"
-              fontSize={fontSize}
-            >
+
+          <Divider orientation="horizontal" mt="1rem" />
+        </Transition>
+        <Transition {...rightAnimation}>
+          <Flex
+            minH={minH}
+            m={m}
+            flexDirection={!isMobile ? "row-reverse" : "column"}
+          >
+            <Flex flex="1" margin="auto 0">
               <Text
-                fontSize="4xl"
                 textAlign="center"
                 justifyContent="center"
-                fontWeight="bold"
-                mb="1rem"
+                fontSize={fontSize}
               >
-                {t("Our goals description2Title")}
+                <Text
+                  fontSize="4xl"
+                  textAlign="center"
+                  justifyContent="center"
+                  fontWeight="bold"
+                  mb="1rem"
+                >
+                  {t("Our goals description2Title")}
+                </Text>
+                {t("Our goals description2")}
               </Text>
-              {t("Our goals description2")}
-            </Text>
+            </Flex>
+            <Box
+              backgroundImage={`url(/svg/idea3.svg)`}
+              objectFit="contain"
+              backgroundRepeat="no-repeat"
+              backgroundSize="100% 100%"
+              flex="2"
+            />
           </Flex>
-          <Box
-            backgroundImage={`url(/svg/idea3.svg)`}
-            objectFit="contain"
-            backgroundRepeat="no-repeat"
-            backgroundSize="100% 100%"
-            flex="2"
-          />
-        </Flex>
-        <Divider orientation="horizontal" mt="1rem" />
-        <Flex flexDirection={flexDirection} minH={minH} m={m}>
-          <Flex flex="1" margin="auto 0">
-            <Text
-              textAlign="center"
-              justifyContent="center"
-              fontSize={fontSize}
-            >
+          <Divider orientation="horizontal" mt="1rem" />
+        </Transition>
+        <Transition>
+          <Flex flexDirection={flexDirection} minH={minH} m={m}>
+            <Flex flex="1" margin="auto 0">
               <Text
-                fontSize="4xl"
                 textAlign="center"
                 justifyContent="center"
-                fontWeight="bold"
-                mb="1rem"
+                fontSize={fontSize}
               >
-                {t("Our goals description3Title")}
+                <Text
+                  fontSize="4xl"
+                  textAlign="center"
+                  justifyContent="center"
+                  fontWeight="bold"
+                  mb="1rem"
+                >
+                  {t("Our goals description3Title")}
+                </Text>
+                {t("Our goals description3")}
               </Text>
-              {t("Our goals description3")}
-            </Text>
+            </Flex>
+            <Box
+              backgroundImage={`url(/svg/idea2.svg)`}
+              backgroundRepeat="no-repeat"
+              backgroundSize="100% 100%"
+              objectFit="contain"
+              flex="2"
+            />
           </Flex>
-          <Box
-            backgroundImage={`url(/svg/idea2.svg)`}
-            backgroundRepeat="no-repeat"
-            backgroundSize="100% 100%"
-            objectFit="contain"
-            flex="2"
-          />
-        </Flex>
-        <Divider orientation="horizontal" mt="1rem" />
+          <Divider orientation="horizontal" mt="1rem" />
+        </Transition>
       </Center>
     </Box>
   );
-});
+};
 
 export default Details;

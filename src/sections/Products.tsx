@@ -52,7 +52,7 @@ const products = [product2, product1];
 
 const _hover = { cursor: "pointer" };
 
-const Products = React.forwardRef<HTMLDivElement>((props, ref) => {
+const Products = ()=>{
   const { t } = useTranslation();
   return (
     <Box
@@ -61,7 +61,6 @@ const Products = React.forwardRef<HTMLDivElement>((props, ref) => {
       as="section"
       flexDirection="column"
       id="products"
-      ref={ref}
     >
       <Box mt="2rem" mb="5rem">
         <Center>
@@ -77,6 +76,6 @@ const Products = React.forwardRef<HTMLDivElement>((props, ref) => {
       ))}
     </Box>
   );
-});
+}
 
 export default Products;

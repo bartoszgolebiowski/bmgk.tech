@@ -4,7 +4,7 @@ import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
 import useMobileView from "../utils/hooks/useMobileView";
 import { useTranslation } from "../../i18n";
 
-const AboutUs = React.forwardRef<HTMLDivElement>((props, ref) => {
+const AboutUs = () => {
   const { t } = useTranslation();
   const [isMobile] = useMobileView();
 
@@ -14,14 +14,7 @@ const AboutUs = React.forwardRef<HTMLDivElement>((props, ref) => {
   const flexDirection = isMobile ? "column" : "row";
 
   return (
-    <Box
-      mt="2rem"
-      mb="1rem"
-      as="section"
-      flexDirection="column"
-      id="aboutUs"
-      ref={ref}
-    >
+    <Box mt="2rem" mb="1rem" as="section" flexDirection="column" id="aboutUs">
       <Box mt="2rem">
         <Center>
           <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
@@ -52,6 +45,6 @@ const AboutUs = React.forwardRef<HTMLDivElement>((props, ref) => {
       <Divider />
     </Box>
   );
-});
+};
 
 export default AboutUs;
