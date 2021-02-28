@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Box, Center, Heading } from "@chakra-ui/react";
-import ProductItem from "../components/ProductItem";
 
+import ProductItem from "../components/ProductItem";
+import Transition from "../components/Transition";
 import { useTranslation } from "../../i18n";
+import useCurrentSection from "../utils/hooks/useCurrentSection";
 
 const product1 = {
   title: "Product1",
@@ -49,18 +51,21 @@ const product2 = {
 };
 
 const products = [product2, product1];
-
 const _hover = { cursor: "pointer" };
 
-const Products = ()=>{
+const Products = () => {
   const { t } = useTranslation();
+  const { ref } = useCurrentSection("products");
+
   return (
     <Box
+      ref={ref}
       mt="2rem"
       mb="10rem"
       as="section"
       flexDirection="column"
       id="products"
+      css={{ scrollMarginTop: "100px" }}
     >
       <Box mt="2rem" mb="5rem">
         <Center>
@@ -70,12 +75,14 @@ const Products = ()=>{
         </Center>
       </Box>
       {products.map(({ Logo, ...rest }) => (
-        <ProductItem key={rest.title} {...rest}>
-          <Logo />
-        </ProductItem>
+        <Transition key={rest.title}>
+          <ProductItem {...rest}>
+            <Logo />
+          </ProductItem>
+        </Transition>
       ))}
     </Box>
   );
-}
+};
 
 export default Products;

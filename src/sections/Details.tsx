@@ -1,12 +1,15 @@
 import * as React from "react";
 import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+
 import useMobileView from "../utils/hooks/useMobileView";
+import Transition from "../components/Transition";
+import useCurrentSection from "../utils/hooks/useCurrentSection";
 import { useTranslation } from "../../i18n";
-import Transition, { rightAnimation } from "../components/Transition";
 
 const Details = () => {
   const { t } = useTranslation();
   const [isMobile] = useMobileView();
+  const { ref } = useCurrentSection("ourGoals");
 
   const minH = isMobile ? "100vh" : "60vh";
   const m = "5rem 0";
@@ -14,22 +17,22 @@ const Details = () => {
   const flexDirection = isMobile ? "column" : "row";
 
   return (
-    <Box mt="2rem" mb="6rem" as="section" flexDirection="column" id="ourGoals">
-      <Transition {...rightAnimation}>
-        <Box mt="2rem">
-          <Center>
-            <Heading
-              as="h2"
-              size="3xl"
-              isTruncated
-              color="#43A047"
-              height="10vh"
-            >
-              {t("Our goals")}
-            </Heading>
-          </Center>
-        </Box>
-      </Transition>
+    <Box
+      ref={ref}
+      mt="2rem"
+      mb="6rem"
+      as="section"
+      flexDirection="column"
+      id="ourGoals"
+      css={{ scrollMarginTop: "100px" }}
+    >
+      <Box mt="2rem">
+        <Center>
+          <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
+            {t("Our goals")}
+          </Heading>
+        </Center>
+      </Box>
       <Center display="flex" flexDirection={"column"}>
         <Transition>
           <Flex flexDirection={flexDirection} minH={minH} m={m}>
@@ -62,7 +65,7 @@ const Details = () => {
 
           <Divider orientation="horizontal" mt="1rem" />
         </Transition>
-        <Transition {...rightAnimation}>
+        <Transition>
           <Flex
             minH={minH}
             m={m}

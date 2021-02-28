@@ -13,21 +13,17 @@ import {
   DrawerOverlay,
   List,
   ListItem,
+  Link,
 } from "@chakra-ui/react";
 import { withTranslation } from "../../../i18n";
 import LanguageSelect from "../../components/LanguageSelect";
 
 type HeaderMobileProps = {
-  items: { name: string; onClick: () => void }[];
-  scrollToStart: () => void;
+  items: { name: string; href: string }[];
   t: TFunction;
 };
 
-const HeaderMobile: React.FC<HeaderMobileProps> = ({
-  items,
-  scrollToStart,
-  t,
-}) => {
+const HeaderMobile: React.FC<HeaderMobileProps> = ({ items, t }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const _hover = { cursor: "pointer" };
@@ -48,7 +44,7 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
         zIndex="1000"
       >
         <Flex flex="1">
-          <Center w="10rem" fontSize="2rem" onClick={scrollToStart}>
+          <Center w="10rem" fontSize="2rem" _hover={_hover} as="a" href="#hero">
             <img src={require("../../assets/BMGK.svg")} alt="BMGK Logo" />
           </Center>
         </Flex>
@@ -78,12 +74,9 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({
                     _first={_first}
                     _hover={_hover}
                     fontSize="1.5rem"
-                    onClick={() => {
-                      onClose();
-                      menuItem.onClick();
-                    }}
+                    onClick={onClose}
                   >
-                    {menuItem.name}
+                    <Link href={menuItem.href}>{menuItem.name}</Link>
                   </ListItem>
                 ))}
               </List>

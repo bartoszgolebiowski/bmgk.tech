@@ -1,25 +1,26 @@
 import * as React from "react";
+import { Router } from "next/router";
 import { Center, Flex } from "@chakra-ui/react";
+import { motion } from "framer-motion";
 
 import LanguageSelect from "../../components/LanguageSelect";
+import useCurrentHref from "../../utils/hooks/useCurrentHref";
 import { useTranslation } from "../../../i18n";
 
-const _hover = { cursor: "pointer" };
-
-const scrollToContact = () =>
-  document.getElementById("contact").scrollIntoView({ behavior: "smooth" });
-
-type HeaderDesktopProps = {
-  items: { name: string; onClick: () => void }[];
-  scrollToStart: () => void;
+const _hover = {
+  cursor: "pointer",
 };
 
-const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
-  items,
-  scrollToStart,
-}) => {
-  const { t } = useTranslation();
+type HeaderDesktopProps = {
+  items: { name: string; href: string }[];
+};
 
+const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ items }) => {
+  const { t } = useTranslation();
+  const { active } = useCurrentHref(items);
+
+  const isActive = active === "#contact";
+  
   return (
     <Flex
       direction="row"
@@ -34,28 +35,60 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({
       zIndex="1000"
     >
       <Flex flex="1">
-        <Center w="10rem" _hover={_hover} onClick={scrollToStart}>
+        <Center w="10rem" _hover={_hover} as="a" href="#hero">
           <img src={require("../../assets/BMGK.svg")} alt="BMGK Logo" />
         </Center>
       </Flex>
       <Flex flex="3" direction="row" justifyContent="center" shrink="revert">
-        {items.map((menuItem) => (
-          <Center
-            w="7rem"
-            _hover={_hover}
-            key={menuItem.name}
-            onClick={menuItem.onClick}
-          >
-            {menuItem.name}
-          </Center>
-        ))}
+        {items.map((menuItem) => {
+          const isActive = active === menuItem.href;
+
+          return (
+            <Center
+              w="7rem"
+              _hover={_hover}
+              key={menuItem.name}
+              as="a"
+              href={menuItem.href}
+              onClick={() => Router.events.emit("hashChangeStart")}
+            >
+              <motion.span
+                style={{
+                  fontSize: "1.3rem",
+                  textDecoration: isActive ? "underline" : "",
+                  textDecorationColor: isActive ? "#43A047" : "#ab47bc",
+                  color: isActive ? "#43A047" : "#ab47bc",
+                }}
+                transition={{ repeat: Infinity, duration: 8 }}
+                animate={{
+                  scale: isActive ? [1.1, 1.2, 1.1, 1.2, 1.1] : [1, 1, 1, 1, 1],
+                }}
+              >
+                {menuItem.name}
+              </motion.span>
+            </Center>
+          );
+        })}
       </Flex>
       <Flex flex="1" justifyContent="flex-end">
         <Center _hover={_hover}>
           <LanguageSelect />
         </Center>
-        <Center w="10rem" _hover={_hover} onClick={scrollToContact}>
-          {t("Contact")}
+        <Center w="10rem" _hover={_hover} as="a" href="#contact">
+          <motion.span
+            style={{
+              fontSize: "1.3rem",
+              textDecoration: isActive ? "underline" : "",
+              textDecorationColor: isActive ? "#43A047" : "#ab47bc",
+              color: isActive ? "#43A047" : "#ab47bc",
+            }}
+            transition={{ repeat: Infinity, duration: 8 }}
+            animate={{
+              scale: isActive ? [1.1, 1.2, 1.1, 1.2, 1.1] : [1, 1, 1, 1, 1],
+            }}
+          >
+            {t("Contact")}
+          </motion.span>
         </Center>
       </Flex>
     </Flex>

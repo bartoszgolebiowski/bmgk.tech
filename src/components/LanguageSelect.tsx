@@ -1,8 +1,8 @@
 import * as React from "react";
 import { Button, Select, Stack } from "@chakra-ui/react";
 
-import { withTranslation } from "../../i18n";
 import useMobileView from "../utils/hooks/useMobileView";
+import { withTranslation } from "../../i18n";
 
 const noop = () => {};
 
@@ -12,6 +12,11 @@ const LanguageSelect = ({ i18n, onSubmit = noop }) => {
 
   const handleChangeLangugage = (language: string) => {
     i18n.changeLanguage(language);
+    history.replaceState(
+      "",
+      document.title,
+      window.location.origin + `/${language}`
+    );
     onSubmit();
   };
 

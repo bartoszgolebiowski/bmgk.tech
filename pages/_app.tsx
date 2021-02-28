@@ -1,10 +1,13 @@
 import * as React from "react";
-import { ChakraProvider } from "@chakra-ui/react";
+import { ChakraProvider, CSSReset } from "@chakra-ui/react";
 import { appWithTranslation } from "../i18n";
+
+import "../styles.css";
 
 function MyApp({ Component, pageProps }) {
   return (
     <ChakraProvider>
+      <CSSReset />
       <Component {...pageProps} />
     </ChakraProvider>
   );
