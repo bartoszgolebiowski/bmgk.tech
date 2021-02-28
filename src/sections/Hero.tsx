@@ -10,7 +10,7 @@ const Hero = () => {
   const { t } = useTranslation();
   const [current] = useNumberCauousel(3);
   const { ref } = useCurrentSection("hero");
-  
+
   return (
     <>
       <Box
@@ -25,12 +25,12 @@ const Hero = () => {
           <Heading
             as="h1"
             size="4xl"
-            isTruncated
             color="#43A047"
             textAlign="center"
             pb="1rem"
           >
             {t(`Welcome`)}
+            <br />
             <AnimatedHeder>{t(`Welcome${current}`)}</AnimatedHeder>
           </Heading>
         </Center>

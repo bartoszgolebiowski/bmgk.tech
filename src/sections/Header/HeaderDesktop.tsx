@@ -20,7 +20,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ items }) => {
   const { active } = useCurrentHref(items);
 
   const isActive = active === "#contact";
-  
+
   return (
     <Flex
       direction="row"
@@ -54,10 +54,7 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ items }) => {
             >
               <motion.span
                 style={{
-                  fontSize: "1.3rem",
-                  textDecoration: isActive ? "underline" : "",
-                  textDecorationColor: isActive ? "#43A047" : "#ab47bc",
-                  color: isActive ? "#43A047" : "#ab47bc",
+                  fontSize: "1.2rem",
                 }}
                 transition={{ repeat: Infinity, duration: 8 }}
                 animate={{
@@ -78,9 +75,6 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ items }) => {
           <motion.span
             style={{
               fontSize: "1.3rem",
-              textDecoration: isActive ? "underline" : "",
-              textDecorationColor: isActive ? "#43A047" : "#ab47bc",
-              color: isActive ? "#43A047" : "#ab47bc",
             }}
             transition={{ repeat: Infinity, duration: 8 }}
             animate={{
