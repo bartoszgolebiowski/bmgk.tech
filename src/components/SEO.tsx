@@ -3,7 +3,6 @@ import * as React from "react";
 const SEO = () => {
   return (
     <>
-      <title>BMGK.tech</title>
       <meta
         name="description"
         content="We program PLC and we create high-level macros for them"
