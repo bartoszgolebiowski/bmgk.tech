@@ -10,6 +10,7 @@ import Products from "../src/sections/Products";
 import Contact from "../src/sections/Contact";
 import AboutUs from "../src/sections/AboutUs";
 import Services from "../src/sections/Services";
+import SEO from "../src/components/SEO";
 
 function Home() {
   return (
@@ -17,6 +18,7 @@ function Home() {
       <Head>
         <title>BMGK.tech</title>
         <link rel="icon" href="/BMGK.ico" />
+        <SEO />
       </Head>
       <Header />
       <Container as="main" maxW="100ch" id="start">
