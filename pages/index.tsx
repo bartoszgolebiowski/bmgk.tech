@@ -16,7 +16,6 @@ function Home() {
   return (
     <div>
       <Head>
-        <title>BMGK.tech</title>
         <link rel="icon" href="/BMGK.ico" />
         <SEO />
       </Head>
