@@ -1,9 +1,8 @@
 import * as React from "react";
-import { Helmet } from "react-helmet";
 
 const SEO = () => {
   return (
-    <Helmet>
+    <>
       <title>BMGK.tech</title>
       <meta
         name="description"
@@ -32,7 +31,7 @@ const SEO = () => {
         content="We program PLC and we create high-level macros for them"
       />
       <meta name="twitter:image" content="https://bmgk.tech/svg/BMGK.svg" />
-    </Helmet>
+    </>
   );
 };
 
