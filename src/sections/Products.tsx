@@ -35,12 +35,14 @@ const product1 = {
 
 const product2 = {
   title: "Product2",
-  titleHref: "",
+  titleHref: "https://plctianetlibrary.bmgk.tech/",
   subTitle: "Product2 Description",
   Logo: () => (
-    <Center w="10rem" margin="2rem auto">
-      <img src={require("../assets/TiaV16.svg")} alt={"TiaV16 Logo"} />
-    </Center>
+    <a href="https://plctianetlibrary.bmgk.tech/" target="_blank">
+      <Center w="10rem" margin="2rem auto">
+        <img src={require("../assets/TiaV16.svg")} alt={"TiaV16 Logo"} />
+      </Center>
+    </a>
   ),
   items: [
     "Product2 Description1",

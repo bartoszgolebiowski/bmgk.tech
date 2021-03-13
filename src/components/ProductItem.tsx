@@ -20,13 +20,9 @@ const ProductItem = ({ title, items, children, subTitle, titleHref }) => {
             height="10vh"
             id="plcCreator"
           >
-            {titleHref !== "" ? (
-              <Box as="a" href={titleHref} target="_blank" _hover={_hover}>
-                {t(title)}
-              </Box>
-            ) : (
-              <Box>{t(title)}</Box>
-            )}
+            <Box as="a" href={titleHref} target="_blank" _hover={_hover}>
+              {t(title)}
+            </Box>
           </Heading>
         </Center>
         {children}
