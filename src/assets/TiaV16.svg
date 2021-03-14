@@ -17,11 +17,11 @@
   <defs
      id="defs2002" />
   <sodipodi:namedview
-     inkscape:window-maximized="1"
-     inkscape:window-y="-8"
-     inkscape:window-x="-8"
-     inkscape:window-height="1017"
-     inkscape:window-width="1920"
+     inkscape:window-maximized="0"
+     inkscape:window-y="0"
+     inkscape:window-x="975"
+     inkscape:window-height="1040"
+     inkscape:window-width="1280"
      fit-margin-bottom="5"
      fit-margin-right="5"
      fit-margin-left="5"
@@ -29,10 +29,10 @@
      lock-margins="true"
      showgrid="false"
      inkscape:document-rotation="0"
-     inkscape:current-layer="g2759"
+     inkscape:current-layer="layer1"
      inkscape:document-units="mm"
      inkscape:cy="107.96326"
-     inkscape:cx="96.42203"
+     inkscape:cx="113.88098"
      inkscape:zoom="2.8"
      inkscape:pageshadow="2"
      inkscape:pageopacity="0.0"
@@ -48,7 +48,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -69,35 +69,35 @@
       <text
          xml:space="preserve"
          style="font-style:normal;font-weight:normal;font-size:17.6764px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.441908"
-         x="39.265137"
-         y="136.62366"
+         x="35.031799"
+         y="132.91954"
          id="text2753"><tspan
            sodipodi:role="line"
            id="tspan2751"
-           x="39.265137"
-           y="136.62366"
+           x="35.031799"
+           y="132.91954"
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.441908">PLC</tspan></text>
       <text
          id="text2757"
-         y="144.22421"
-         x="40.564648"
+         y="140.5201"
+         x="36.33131"
          style="font-style:normal;font-weight:normal;font-size:7.08754px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.177188"
          xml:space="preserve"><tspan
            style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.177188"
-           y="144.22421"
-           x="40.564648"
+           y="140.5201"
+           x="36.33131"
            id="tspan2755"
            sodipodi:role="line">TIA .NET</tspan></text>
     </g>
     <text
        id="text854"
-       y="212.36885"
-       x="130.4964"
-       style="font-style:normal;font-weight:normal;font-size:8.64397px;line-height:1.25;font-family:sans-serif;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.216099"
+       y="216.60213"
+       x="138.43379"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.64397px;line-height:1.25;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.216099"
        xml:space="preserve"><tspan
-         style="font-style:normal;font-variant:normal;font-weight:bold;font-stretch:normal;font-family:sans-serif;-inkscape-font-specification:'sans-serif Bold';fill:#ffffff;stroke-width:0.216099"
-         y="212.36885"
-         x="130.4964"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:8.64397px;font-family:sans-serif;-inkscape-font-specification:'sans-serif, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#ffffff;stroke-width:0.216099"
+         y="216.60213"
+         x="138.43379"
          id="tspan852"
          sodipodi:role="line">Library</tspan></text>
   </g>
