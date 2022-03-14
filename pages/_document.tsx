@@ -1,5 +1,5 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
-
+import { GOOGLE_ANALYTICS_KEY } from "../lib/analytics";
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -12,7 +12,7 @@ class MyDocument extends Document {
         <Head>
           <script
             async
-            src="https://www.googletagmanager.com/gtag/js?id=G-CPN6C7Y32D"
+            src={`https://www.googletagmanager.com/gtag/js?id=${GOOGLE_ANALYTICS_KEY}`}
           />
           <script
             dangerouslySetInnerHTML={{
@@ -20,7 +20,7 @@ class MyDocument extends Document {
                 window.dataLayer = window.dataLayer || [];
                 function gtag(){dataLayer.push(arguments);}
                 gtag('js', new Date());
-                gtag('config', 'G-CPN6C7Y32D');
+                gtag('config', '${GOOGLE_ANALYTICS_KEY}');
               `,
             }}
           />
