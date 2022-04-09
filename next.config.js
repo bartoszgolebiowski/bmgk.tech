@@ -8,4 +8,7 @@ module.exports = {
       pl: "pl",
     }),
   ...withImages(),
+  typescript: {
+    ignoreBuildErrors: true,
+  },
 };
