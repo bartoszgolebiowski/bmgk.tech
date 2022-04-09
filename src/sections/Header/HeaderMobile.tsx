@@ -19,7 +19,7 @@ import { withTranslation } from "../../../i18n";
 import LanguageSelect from "../../components/LanguageSelect";
 
 type HeaderMobileProps = {
-  items: { name: string; href: string }[];
+  items: { name: string; href: string; target?: "_blank" }[];
   t: TFunction;
 };
 
@@ -76,7 +76,9 @@ const HeaderMobile: React.FC<HeaderMobileProps> = ({ items, t }) => {
                     fontSize="1.5rem"
                     onClick={onClose}
                   >
-                    <Link href={menuItem.href}>{menuItem.name}</Link>
+                    <Link href={menuItem.href} target={menuItem.target ?? ""}>
+                      {menuItem.name}
+                    </Link>
                   </ListItem>
                 ))}
               </List>

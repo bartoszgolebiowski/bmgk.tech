@@ -36,20 +36,12 @@ const ContactForm = () => {
 
   const onSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    //@ts-ignore
-    const name = event.target.name.value;
-    //@ts-ignore
-    const email = event.target.email.value;
-    //@ts-ignore
-    const message = event.target.message.value;
+    const formData = new FormData(form.current);
+    const data = Object.fromEntries(formData);
 
     fetch("api/contact", {
       method: "POST",
-      body: JSON.stringify({
-        name,
-        email,
-        message,
-      }),
+      body: JSON.stringify(data),
     })
       .then((res) => {
         if (res.ok) {

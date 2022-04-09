@@ -12,15 +12,6 @@ const menu = (t: TFunction) => [
     name: t("About us"),
   },
   {
-    href: "#services",
-    name: t("Services"),
-  },
-  {
-    href: "#ourGoals",
-    name: t("Our goals"),
-  },
-
-  {
     href: "#products",
     name: t("Products"),
   },
@@ -28,6 +19,11 @@ const menu = (t: TFunction) => [
 
 const menuMobile = (t: TFunction) => [
   ...menu(t),
+  {
+    href: "https://bgolebiowski.com/",
+    target: "_blank" as const,
+    name: t("Blog"),
+  },
   {
     href: "#contact",
     name: t("Contact"),
