@@ -71,16 +71,20 @@ const HeaderDesktop: React.FC<HeaderDesktopProps> = ({ items }) => {
         <Center _hover={_hover}>
           <LanguageSelect />
         </Center>
-        <Center _hover={_hover} as="a" href="#contact" ml="5">
-          <motion.a
+        <Center
+          _hover={_hover}
+          as="a"
+          href="https://bgolebiowski.com/"
+          ml="5"
+          target="_blank"
+        >
+          <motion.span
             style={{
               fontSize: "1.3rem",
             }}
-            href="https://bgolebiowski.com/"
-            target="_blank"
           >
             {t("Blog")}
-          </motion.a>
+          </motion.span>
         </Center>
         <Center w="10rem" _hover={_hover} as="a" href="#contact">
           <motion.span
