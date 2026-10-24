@@ -1,17 +1,28 @@
 import * as React from "react";
+import usePrefersReducedMotion from "./usePrefersReducedMotion";
 
 export const CAROUSEL_TIME = 5000;
 
-const useNumberCauousel = (length: number) => {
+/**
+ * Cycles through numbers 1..length in order and always returns a valid key.
+ */
+const useNumberCarousel = (length: number) => {
+  const prefersReducedMotion = usePrefersReducedMotion();
   const [current, setCurrent] = React.useState(1);
 
   React.useEffect(() => {
-    const next = (current + 1) % length;
-    const id = setTimeout(() => setCurrent(next + 1), CAROUSEL_TIME);
-    return () => clearTimeout(id);
-  }, [current, length]);
+    if (prefersReducedMotion || length <= 1) {
+      return;
+    }
 
-  return [current];
+    const id = setTimeout(() => {
+      setCurrent((value) => (value % length) + 1);
+    }, CAROUSEL_TIME);
+
+    return () => clearTimeout(id);
+  }, [current, length, prefersReducedMotion]);
+
+  return [current] as const;
 };
 
-export default useNumberCauousel;
+export default useNumberCarousel;

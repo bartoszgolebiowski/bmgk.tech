@@ -1,88 +1,65 @@
 import * as React from "react";
-import { Box, Center, Heading } from "@chakra-ui/react";
+import { Box, Container, Stack } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next/pages";
 
-import ProductItem from "../components/ProductItem";
-import Transition from "../components/Transition";
-import { useTranslation } from "../../i18n";
-import useCurrentSection from "../utils/hooks/useCurrentSection";
+import ProductItem, { Product } from "../components/ProductItem";
+import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
 
-const product1 = {
-  title: "Product1",
-  titleHref: "https://vass6plccreator.bmgk.tech/",
-  subTitle: "Product1 Description",
-  Logo: () => (
-    <Center w="10rem" _hover={_hover} margin="2rem auto">
-      <a href="https://vass6plccreator.bmgk.tech/" target="_blank">
-        <img
-          src={require("../assets/PlcCreator.svg")}
-          alt={"PLC Creator Logo"}
-        />
-      </a>
-    </Center>
-  ),
-  items: [
-    "Product1 Description1",
-    "Product1 Description2",
-    "Product1 Description3",
-    "Product1 Description4",
-    "Product1 Description5",
-    "Product1 Description6",
-    "Product1 Description7",
-    "Product1 Description8",
-    "Product1 Description9",
-  ],
-};
-
-const product2 = {
-  title: "Product2",
-  titleHref: "https://plctianetlibrary.bmgk.tech/",
-  subTitle: "Product2 Description",
-  Logo: () => (
-    <Center w="10rem" _hover={_hover} margin="2rem auto">
-      <a href="https://plctianetlibrary.bmgk.tech/" target="_blank">
-        <img src={require("../assets/TiaV16.svg")} alt={"TiaV16 Logo"} />
-      </a>
-    </Center>
-  ),
-  items: [
-    "Product2 Description1",
-    "Product2 Description2",
-    "Product2 Description3",
-    "Product2 Description4",
-  ],
-};
-
-const products = [product2, product1];
-const _hover = { cursor: "pointer" };
+const PRODUCTS: Product[] = [
+  {
+    title: "Product1",
+    titleHref: "https://vass6plccreator.bmgk.tech/",
+    subTitle: "Product1 Description",
+    badge: "Product1 badge",
+    logo: "/svg/PlcCreator.svg",
+    items: [
+      "Product1 Description1",
+      "Product1 Description2",
+      "Product1 Description3",
+      "Product1 Description4",
+      "Product1 Description5",
+      "Product1 Description6",
+      "Product1 Description7",
+      "Product1 Description8",
+      "Product1 Description9",
+    ],
+  },
+  {
+    title: "Product2",
+    titleHref: "https://plctianetlibrary.bmgk.tech/",
+    subTitle: "Product2 Description",
+    badge: "Product2 badge",
+    logo: "/svg/TiaV16.svg",
+    items: [
+      "Product2 Description1",
+      "Product2 Description2",
+      "Product2 Description3",
+      "Product2 Description4",
+    ],
+  },
+];
 
 const Products = () => {
   const { t } = useTranslation();
-  const { ref } = useCurrentSection("products");
 
   return (
-    <Box
-      ref={ref}
-      mt="2rem"
-      mb="10rem"
-      as="section"
-      flexDirection="column"
-      id="products"
-      css={{ scrollMarginTop: "100px" }}
-    >
-      <Box mt="2rem" mb="5rem">
-        <Center>
-          <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
-            {t("Products")}
-          </Heading>
-        </Center>
-      </Box>
-      {products.map(({ Logo, ...rest }) => (
-        <Transition key={rest.title}>
-          <ProductItem {...rest}>
-            <Logo />
-          </ProductItem>
-        </Transition>
-      ))}
+    <Box as="section" id="products" bg="ink.50" py={{ base: 16, md: 24 }}>
+      <Container maxW="6xl">
+        <SectionHeading
+          eyebrow={t("Products eyebrow")}
+          title={t("Products")}
+          description={t("Products description")}
+        />
+
+        <Stack gap={8}>
+          {PRODUCTS.map((product, index) => (
+            <Reveal key={product.title} delay={index * 0.08}>
+              <ProductItem {...product} />
+            </Reveal>
+          ))}
+        </Stack>
+      </Container>
     </Box>
   );
 };

@@ -1,135 +1,97 @@
 import * as React from "react";
-import { Box, Center, Divider, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import { useTranslation } from "next-i18next/pages";
 
-import useMobileView from "../utils/hooks/useMobileView";
-import Transition from "../components/Transition";
-import useCurrentSection from "../utils/hooks/useCurrentSection";
-import { useTranslation } from "../../i18n";
+import Reveal from "../components/Reveal";
+import SectionHeading from "../components/SectionHeading";
+
+const VALUES = [
+  {
+    image: "/svg/idea1.svg",
+    title: "Our goals description1Title",
+    description: "Our goals description1",
+  },
+  {
+    image: "/svg/idea3.svg",
+    title: "Our goals description2Title",
+    description: "Our goals description2",
+  },
+  {
+    image: "/svg/idea2.svg",
+    title: "Our goals description3Title",
+    description: "Our goals description3",
+  },
+];
 
 const Details = () => {
   const { t } = useTranslation();
-  const [isMobile] = useMobileView();
-  const { ref } = useCurrentSection("ourGoals");
-
-  const minH = isMobile ? "100vh" : "60vh";
-  const m = "5rem 0";
-  const fontSize = isMobile ? "2rem" : "1.2rem";
-  const flexDirection = isMobile ? "column" : "row";
 
   return (
-    <Box
-      ref={ref}
-      mt="2rem"
-      mb="6rem"
-      as="section"
-      flexDirection="column"
-      id="ourGoals"
-      css={{ scrollMarginTop: "100px" }}
-    >
-      <Box mt="2rem">
-        <Center>
-          <Heading as="h2" size="3xl" isTruncated color="#43A047" height="10vh">
-            {t("Our goals")}
-          </Heading>
-        </Center>
-      </Box>
-      <Center display="flex" flexDirection={"column"}>
-        <Transition>
-          <Flex flexDirection={flexDirection} minH={minH} m={m}>
-            <Flex flex="1" margin="auto 2rem">
-              <Text
-                textAlign="center"
-                justifyContent="center"
-                fontSize={fontSize}
-              >
-                <Text
-                  fontSize="4xl"
-                  textAlign="center"
-                  justifyContent="center"
-                  fontWeight="bold"
-                  mb="1rem"
-                >
-                  {t("Our goals description1Title")}
-                </Text>
-                {t("Our goals description1")}
-              </Text>
-            </Flex>
-            <Box
-              backgroundImage={`url(/svg/idea1.svg)`}
-              objectFit="contain"
-              backgroundRepeat="no-repeat"
-              backgroundSize="100% 100%"
-              flex="2"
-            />
-          </Flex>
+    <Box as="section" id="ourGoals" bg="white" py={{ base: 16, md: 24 }}>
+      <Container maxW="6xl">
+        <SectionHeading
+          eyebrow={t("Our goals eyebrow")}
+          title={t("Our goals")}
+        />
 
-          <Divider orientation="horizontal" mt="1rem" />
-        </Transition>
-        <Transition>
-          <Flex
-            minH={minH}
-            m={m}
-            flexDirection={!isMobile ? "row-reverse" : "column"}
-          >
-            <Flex flex="1" margin="auto 0">
-              <Text
-                textAlign="center"
-                justifyContent="center"
-                fontSize={fontSize}
+        <Grid templateColumns={{ base: "1fr", md: "repeat(3, 1fr)" }} gap={6}>
+          {VALUES.map(({ image, title, description }, index) => (
+            <Reveal key={title} delay={index * 0.08}>
+              <Flex
+                direction="column"
+                h="100%"
+                bg="white"
+                borderWidth="1px"
+                borderColor="ink.200"
+                borderRadius="3xl"
+                boxShadow="card"
+                overflow="hidden"
+                transition="transform .2s ease, box-shadow .2s ease"
+                _hover={{ transform: "translateY(-4px)", boxShadow: "cardHover" }}
               >
-                <Text
-                  fontSize="4xl"
-                  textAlign="center"
-                  justifyContent="center"
-                  fontWeight="bold"
-                  mb="1rem"
+                <Flex
+                  align="center"
+                  justify="center"
+                  px={6}
+                  pt={6}
+                  pb={2}
+                  bg="linear-gradient(180deg, rgba(67,160,71,0.08), rgba(255,255,255,0))"
                 >
-                  {t("Our goals description2Title")}
-                </Text>
-                {t("Our goals description2")}
-              </Text>
-            </Flex>
-            <Box
-              backgroundImage={`url(/svg/idea3.svg)`}
-              objectFit="contain"
-              backgroundRepeat="no-repeat"
-              backgroundSize="100% 100%"
-              flex="2"
-            />
-          </Flex>
-          <Divider orientation="horizontal" mt="1rem" />
-        </Transition>
-        <Transition>
-          <Flex flexDirection={flexDirection} minH={minH} m={m}>
-            <Flex flex="1" margin="auto 0">
-              <Text
-                textAlign="center"
-                justifyContent="center"
-                fontSize={fontSize}
-              >
-                <Text
-                  fontSize="4xl"
-                  textAlign="center"
-                  justifyContent="center"
-                  fontWeight="bold"
-                  mb="1rem"
-                >
-                  {t("Our goals description3Title")}
-                </Text>
-                {t("Our goals description3")}
-              </Text>
-            </Flex>
-            <Box
-              backgroundImage={`url(/svg/idea2.svg)`}
-              backgroundRepeat="no-repeat"
-              backgroundSize="100% 100%"
-              objectFit="contain"
-              flex="2"
-            />
-          </Flex>
-          <Divider orientation="horizontal" mt="1rem" />
-        </Transition>
-      </Center>
+                  <img
+                    src={image}
+                    alt=""
+                    aria-hidden="true"
+                    style={{
+                      width: "100%",
+                      height: 150,
+                      objectFit: "contain",
+                      display: "block",
+                    }}
+                  />
+                </Flex>
+
+                <Box p={{ base: 6, md: 7 }} pt={4}>
+                  <Text
+                    fontSize="xs"
+                    fontWeight={700}
+                    letterSpacing="0.08em"
+                    color="brand.600"
+                    mb={3}
+                  >
+                    {String(index + 1).padStart(2, "0")}
+                  </Text>
+                  <Heading as="h3" size="md" mb={3}>
+                    {t(title)}
+                  </Heading>
+                  <Text color="ink.600" fontSize="sm" lineHeight="tall">
+                    {t(description)}
+                  </Text>
+                </Box>
+              </Flex>
+            </Reveal>
+          ))}
+        </Grid>
+      </Container>
     </Box>
   );
 };

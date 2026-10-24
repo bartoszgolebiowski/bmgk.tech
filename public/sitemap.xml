@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://bmgk.tech/</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bmgk.tech/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bmgk.tech/pl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bmgk.tech/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <url>
+    <loc>https://bmgk.tech/pl</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://bmgk.tech/" />
+    <xhtml:link rel="alternate" hreflang="pl" href="https://bmgk.tech/pl" />
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://bmgk.tech/" />
+    <changefreq>monthly</changefreq>
+    <priority>1.0</priority>
+  </url>
+</urlset>

@@ -1,55 +1,96 @@
 import * as React from "react";
-import { Button, Select, Stack } from "@chakra-ui/react";
+import { Button, Flex } from "@chakra-ui/react";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next/pages";
 
-import useMobileView from "../utils/hooks/useMobileView";
-import { withTranslation } from "../../i18n";
+const LANGUAGES = [
+  { code: "pl", label: "PL" },
+  { code: "en", label: "EN" },
+];
 
-const noop = () => {};
+type LanguageSelectProps = {
+  onChange?: () => void;
+  tone?: "light" | "dark";
+};
 
-const LanguageSelect = ({ i18n, onSubmit = noop }) => {
-  const [isMobileView] = useMobileView();
-  const { otherLanguages } = i18n.options;
+/**
+ * Two-state language switcher. Keeps the current path and hash when switching,
+ * instead of dropping the user back to the home page.
+ */
+const LanguageSelect = ({ onChange, tone = "light" }: LanguageSelectProps) => {
+  const { t, i18n } = useTranslation();
+  const isDark = tone === "dark";
+  const router = useRouter();
+  const current = (router.locale || i18n.language || "en").slice(0, 2);
 
-  const handleChangeLangugage = (language: string) => {
-    i18n.changeLanguage(language);
-    history.replaceState(
-      "",
-      document.title,
-      window.location.origin + `/${language}`
+  const changeLanguage = (language: string) => {
+    if (language === current) {
+      onChange?.();
+      return;
+    }
+
+    void i18n.changeLanguage(language);
+    void router.push(
+      {
+        pathname: router.pathname,
+        query: router.query,
+        hash: typeof window !== "undefined" ? window.location.hash : undefined,
+      },
+      router.asPath,
+      { locale: language, scroll: false }
     );
-    onSubmit();
+
+    onChange?.();
   };
 
-  if (isMobileView === true) {
-    return (
-      <Stack spacing={4} direction="row" align="">
-        {otherLanguages.map((language: string) => (
-          <Button
-            key={language}
-            color="#ab47bc"
-            size="xs"
-            onClick={() => handleChangeLangugage(language)}
-          >
-            {language.toUpperCase()}
-          </Button>
-        ))}
-      </Stack>
-    );
-  }
-
   return (
-    <Select
-      value={i18n.language}
-      variant="unstyled"
-      onChange={(e) => handleChangeLangugage(e.target.value)}
+    <Flex
+      role="group"
+      aria-label={t("Change language")}
+      align="center"
+      bg={isDark ? "whiteAlpha.100" : "ink.100"}
+      borderWidth="1px"
+      borderColor={isDark ? "whiteAlpha.200" : "ink.200"}
+      borderRadius="full"
+      p="3px"
+      display="inline-flex"
+      w="max-content"
     >
-      {otherLanguages.map((language: string) => (
-        <option key={language} value={language}>
-          {language.toUpperCase()}
-        </option>
-      ))}
-    </Select>
+      {LANGUAGES.map(({ code, label }) => {
+        const isActive = current === code;
+
+        return (
+          <Button
+            key={code}
+            type="button"
+            variant="ghost"
+            onClick={() => changeLanguage(code)}
+            aria-pressed={isActive}
+            aria-label={code === "pl" ? "Polski" : "English"}
+            minW="9"
+            h="7"
+            px={2}
+            borderRadius="full"
+            fontSize="xs"
+            fontWeight={700}
+            letterSpacing="0.04em"
+            color={
+              isActive ? (isDark ? "ink.900" : "brand.700") : isDark ? "whiteAlpha.700" : "ink.500"
+            }
+            bg={isActive ? "white" : "transparent"}
+            boxShadow={isActive ? "0 1px 3px rgba(15,23,42,0.12)" : "none"}
+            transition="background-color .15s ease, color .15s ease"
+            _hover={{
+              color: isActive ? (isDark ? "ink.900" : "brand.700") : "white",
+              bg: isActive ? "white" : isDark ? "whiteAlpha.200" : "brand.50",
+            }}
+          >
+            {label}
+          </Button>
+        );
+      })}
+    </Flex>
   );
 };
 
-export default withTranslation()(LanguageSelect);
+export default LanguageSelect;
