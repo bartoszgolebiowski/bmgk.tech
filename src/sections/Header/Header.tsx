@@ -23,7 +23,7 @@ const SECTION_IDS = [
   "hero",
   "aboutUs",
   "services",
-  "ourGoals",
+  "platform",
   "products",
   "custom",
   "downloads",
@@ -40,7 +40,7 @@ const Header = () => {
     () => [
       { id: "aboutUs", href: "#aboutUs", label: t("About us") },
       { id: "services", href: "#services", label: t("Services") },
-      { id: "ourGoals", href: "#ourGoals", label: t("Our goals") },
+      { id: "platform", href: "#platform", label: t("Platform") },
       { id: "products", href: "#products", label: t("Products") },
       { id: "custom", href: "#custom", label: t("Custom") },
       { id: "downloads", href: "#downloads", label: t("Downloads") },
@@ -95,7 +95,8 @@ const Header = () => {
                 style={{
                   height: 32,
                   width: "auto",
-                  filter: "brightness(0) invert(1)",
+                  // Keep the brand green, just lift it for the dark header.
+                  filter: "brightness(1.8) saturate(1.2)",
                 }}
               />
               <Box

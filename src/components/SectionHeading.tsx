@@ -1,5 +1,5 @@
 import * as React from "react";
-import { Box, type BoxProps, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, type BoxProps, Heading, Text } from "@chakra-ui/react";
 
 type SectionHeadingProps = BoxProps & {
   eyebrow?: string;
@@ -26,27 +26,32 @@ const SectionHeading = ({
       {...rest}
     >
       {eyebrow && (
-        <Text
-          as="span"
-          display="inline-block"
-          px={3}
-          py={1}
-          borderRadius="full"
-          bg="brand.50"
-          color="brand.700"
-          fontSize="xs"
-          fontWeight={700}
-          letterSpacing="0.08em"
-          textTransform="uppercase"
+        <Flex
+          align="center"
+          justify={isCentered ? "center" : "flex-start"}
+          gap={3}
+          mb={4}
         >
-          {eyebrow}
-        </Text>
+          <Box w="8" h="2px" bg="accent.500" flexShrink={0} />
+          <Text
+            as="span"
+            fontFamily="mono"
+            color="steel.600"
+            fontSize="xs"
+            fontWeight={700}
+            letterSpacing="0.14em"
+            textTransform="uppercase"
+          >
+            {eyebrow}
+          </Text>
+        </Flex>
       )}
       <Heading
         as="h2"
-        mt={eyebrow ? 4 : 0}
+        mt={0}
         fontSize={{ base: "3xl", md: "4xl" }}
-        lineHeight="1.15"
+        lineHeight="1.12"
+        letterSpacing="-0.03em"
       >
         {title}
       </Heading>

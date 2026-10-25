@@ -12,7 +12,7 @@ import Header from "../src/sections/Header/Header";
 import Hero from "../src/sections/Hero";
 import AboutUs from "../src/sections/AboutUs";
 import Services from "../src/sections/Services";
-import Details from "../src/sections/Details";
+import Platform from "../src/sections/Platform";
 import Products from "../src/sections/Products";
 import CustomSolutions from "../src/sections/CustomSolutions";
 import Downloads from "../src/sections/Downloads";
@@ -47,7 +47,7 @@ function Home() {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="PLC, automatyzacja, automatyka przemysłowa, VASS6, TIA Portal, .NET, LAD, generator kodu"
+          content="PLC, automatyzacja, automatyka przemysłowa, VASS6, TIA Portal, TIA Openness, .NET, LAD, generator kodu PLC, AI"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="BMGK.tech" />
@@ -80,7 +80,7 @@ function Home() {
         <Hero />
         <AboutUs />
         <Services />
-        <Details />
+        <Platform />
         <Products />
         <CustomSolutions />
         <Downloads />

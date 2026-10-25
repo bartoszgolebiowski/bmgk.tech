@@ -5,11 +5,13 @@ import { useTranslation } from "next-i18next/pages";
 import ProductItem, { Product } from "../components/ProductItem";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
+import { VASS6_DOCS_URL } from "../utils/links";
 
 const PRODUCTS: Product[] = [
   {
     title: "Product1",
-    titleHref: "https://vass6plccreator.bmgk.tech/",
+    titleHref: VASS6_DOCS_URL,
+    linkLabel: "Product1 link",
     subTitle: "Product1 Description",
     badge: "Product1 badge",
     logo: "/svg/PlcCreator.svg",
@@ -44,7 +46,7 @@ const Products = () => {
   const { t } = useTranslation();
 
   return (
-    <Box as="section" id="products" bg="ink.50" py={{ base: 16, md: 24 }}>
+    <Box as="section" id="products" bg="white" py={{ base: 16, md: 24 }}>
       <Container maxW="6xl">
         <SectionHeading
           eyebrow={t("Products eyebrow")}

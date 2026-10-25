@@ -15,6 +15,7 @@ import { useTranslation } from "next-i18next/pages";
 import Reveal from "../components/Reveal";
 import {
   ArchiveIcon,
+  ArrowRightIcon,
   CheckIcon,
   CodeIcon,
   DownloadIcon,
@@ -24,8 +25,8 @@ import {
   SparklesIcon,
   UploadIcon,
 } from "../components/Icons";
-
-const VASS6_URL = "https://vass6plccreator.bmgk.tech/";
+import { requestContactPrefill } from "../utils/contactPrefill";
+import { VASS6_DOCS_URL } from "../utils/links";
 
 const STEPS = [
   {
@@ -98,7 +99,7 @@ const Downloads = () => {
         w="42rem"
         h="42rem"
         borderRadius="full"
-        bg="radial-gradient(circle, rgba(142,36,170,0.20), rgba(142,36,170,0) 68%)"
+        bg="radial-gradient(circle, rgba(81,105,127,0.28), rgba(81,105,127,0) 68%)"
         pointerEvents="none"
       />
       <Box
@@ -291,26 +292,56 @@ const Downloads = () => {
                 ))}
               </Stack>
 
-              <Button
-                asChild
-                mt={8}
-                px={6}
-                bg="brand.500"
-                color="white"
-                borderRadius="full"
-                display="inline-flex"
-                gap={2}
-                _hover={{
-                  bg: "brand.400",
-                  textDecoration: "none",
-                  transform: "translateY(-1px)",
-                }}
-              >
-                <a href={VASS6_URL} target="_blank" rel="noopener noreferrer">
-                  {t("Download VASS6 cta")}
-                  <ExternalLinkIcon width={16} height={16} />
-                </a>
-              </Button>
+              <Flex mt={8} align="center" gap={3} wrap="wrap">
+                <Button
+                  asChild
+                  px={6}
+                  bg="brand.500"
+                  color="white"
+                  borderRadius="full"
+                  display="inline-flex"
+                  gap={2}
+                  _hover={{
+                    bg: "brand.400",
+                    textDecoration: "none",
+                    transform: "translateY(-1px)",
+                  }}
+                >
+                  <a
+                    href="#contact"
+                    onClick={() =>
+                      requestContactPrefill(t("Download VASS6 prefill"))
+                    }
+                  >
+                    {t("Download VASS6 cta")}
+                    <ArrowRightIcon width={16} height={16} />
+                  </a>
+                </Button>
+                <Button
+                  asChild
+                  px={6}
+                  variant="outline"
+                  borderColor="whiteAlpha.300"
+                  color="whiteAlpha.900"
+                  bg="transparent"
+                  borderRadius="full"
+                  display="inline-flex"
+                  gap={2}
+                  _hover={{ bg: "whiteAlpha.100", textDecoration: "none" }}
+                >
+                  <a
+                    href={VASS6_DOCS_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {t("Download docs cta")}
+                    <ExternalLinkIcon width={16} height={16} />
+                  </a>
+                </Button>
+              </Flex>
+              <Text mt={3} fontSize="xs" color="whiteAlpha.500">
+                {t("Download VASS6 note")}
+              </Text>
             </Box>
           </Reveal>
 
@@ -322,7 +353,7 @@ const Downloads = () => {
                 right="-6rem"
                 boxSize="16rem"
                 borderRadius="full"
-                bg="radial-gradient(circle, rgba(142,36,170,0.24), transparent 68%)"
+                bg="radial-gradient(circle, rgba(81,105,127,0.32), transparent 68%)"
                 pointerEvents="none"
               />
 
@@ -337,10 +368,10 @@ const Downloads = () => {
                   justify="center"
                   boxSize="14"
                   borderRadius="2xl"
-                  bg="rgba(142,36,170,0.22)"
+                  bg="rgba(81,105,127,0.30)"
                   borderWidth="1px"
-                  borderColor="rgba(186,104,200,0.35)"
-                  color="accent.200"
+                  borderColor="rgba(143,163,181,0.4)"
+                  color="steel.200"
                 >
                   <ImportIcon width={26} height={26} />
                 </Flex>
@@ -348,10 +379,10 @@ const Downloads = () => {
                   display="inline-flex"
                   alignItems="center"
                   gap={2}
-                  bg="rgba(142,36,170,0.16)"
+                  bg="rgba(81,105,127,0.22)"
                   borderWidth="1px"
-                  borderColor="rgba(186,104,200,0.3)"
-                  color="accent.200"
+                  borderColor="rgba(143,163,181,0.32)"
+                  color="steel.200"
                   borderRadius="full"
                   px={3}
                   py={1.5}
@@ -359,7 +390,7 @@ const Downloads = () => {
                   fontSize="xs"
                   fontWeight={700}
                 >
-                  <Box boxSize="1.5" borderRadius="full" bg="accent.300" />
+                  <Box boxSize="1.5" borderRadius="full" bg="steel.300" />
                   {t("Download importer badge")}
                 </Badge>
               </Flex>
@@ -386,8 +417,8 @@ const Downloads = () => {
                       mt="1px"
                       mr={3}
                       borderRadius="full"
-                      bg="rgba(142,36,170,0.18)"
-                      color="accent.200"
+                      bg="rgba(81,105,127,0.24)"
+                      color="steel.200"
                     >
                       <CheckIcon width={11} height={11} />
                     </Flex>

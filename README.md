@@ -1,6 +1,6 @@
 # BMGK.tech
 
-Landing page for **BMGK.tech** - PLC software and industrial automation. Built with Next.js, React, TypeScript and Chakra UI. The page is fully bilingual (English / Polish), includes a downloads section for **VASS6 PLC Creator** and **TIA Project Importer**, and has a contact form backed by Mailjet.
+Landing page for **BMGK.tech** - PLC code generation for TIA Portal. Built with Next.js, React, TypeScript and Chakra UI. The page is fully bilingual (English / Polish), explains the free core generator and the planned AI premium layer, presents the tool platform, includes a downloads section for **VASS6 PLC Creator** and **TIA Project Importer**, and has a contact form backed by Mailjet.
 
 ## Tech stack
 
@@ -58,9 +58,9 @@ pages/
   api/contact.ts      Contact form endpoint (Mailjet)
 src/
   components/         Reusable UI (Reveal, ContactForm, LanguageSelect, ...)
-  sections/           Page sections (Hero, AboutUs, Services, CustomSolutions, Downloads, ...)
+  sections/           Page sections (Hero, AboutUs, Services, Platform, CustomSolutions, Downloads, ...)
   utils/hooks/        Scroll spy, carousel, reduced-motion helpers
-  theme.ts            Chakra 3 system (brand green / accent purple)
+  theme.ts            Chakra 3 system (brand green / industrial amber accent)
 public/
   static/locales/     en/common.json, pl/common.json - all copy
   svg/, img/          Illustrations and logos
@@ -73,7 +73,13 @@ next.config.js        Next.js config (built-in i18n)
 
 All visible text is translated in `public/static/locales/en/common.json` and `public/static/locales/pl/common.json`. Keep both files in sync - the TypeScript code accesses keys through `t()` and missing keys fall back to the key name.
 
-The downloads section lives in `src/sections/Downloads.tsx`. VASS6 PLC Creator links to the live online app; the TIA Project Importer installer is shown as “coming soon” until a download URL is added.
+The page order is defined in `pages/index.tsx`: Hero → About → Services → Platform → Products → Custom solutions → Downloads → Contact.
+
+The tools section lives in `src/sections/Downloads.tsx`. VASS6 PLC Creator is not publicly released: the card asks for early access (pre-filled contact form) and links to the public documentation. The TIA Project Importer installer is shown as “coming soon” until a download URL is added.
+
+`src/sections/Platform.tsx` holds the “all your tools in one place” message and a mock of the generator UI. The mock is a placeholder: drop real product screenshots into that frame when they are available (there is a comment marking the spot). Tool statuses (Early access / Soon / In development) are translation keys, so update both locale files when a product ships.
+
+The public documentation URL is defined once in `src/utils/links.ts` (`VASS6_DOCS_URL`). Change it there instead of editing individual sections.
 
 The custom generators and AI premium message lives in `src/sections/CustomSolutions.tsx`. AI-assisted generation is explicitly marked as a premium feature in development; update the badge and copy when it becomes available.
 

@@ -31,79 +31,6 @@ const AboutUs = () => {
           gap={{ base: 10, lg: 16 }}
         >
           <Reveal>
-            <Box position="relative">
-              <Box
-                position="absolute"
-                top="-1rem"
-                left="-1rem"
-                w="60%"
-                h="60%"
-                borderRadius="3xl"
-                bg="linear-gradient(135deg, rgba(67,160,71,0.16), rgba(67,160,71,0))"
-              />
-              <Box
-                position="absolute"
-                right="-1.5rem"
-                bottom="-1.5rem"
-                boxSize={{ base: "7rem", md: "10rem" }}
-                borderRadius="full"
-                borderWidth="1px"
-                borderColor="brand.200"
-                opacity={0.75}
-                pointerEvents="none"
-              />
-              <Box
-                position="absolute"
-                right="-12%"
-                bottom="-12%"
-                w="55%"
-                h="55%"
-                borderRadius="full"
-                bg="radial-gradient(circle, rgba(142,36,170,0.16), transparent 70%)"
-                pointerEvents="none"
-              />
-              <Flex
-                position="relative"
-                overflow="hidden"
-                align="center"
-                justify="center"
-                bg="linear-gradient(135deg, #f1f8f2, #f7f2fa)"
-                borderWidth="1px"
-                borderColor="ink.200"
-                borderRadius="3xl"
-                boxShadow="card"
-                p={{ base: 4, md: 8 }}
-              >
-                <Box
-                  position="absolute"
-                  inset={0}
-                  opacity={0.42}
-                  pointerEvents="none"
-                  css={{
-                    backgroundImage:
-                      "radial-gradient(rgba(27,94,32,0.14) 1px, transparent 1px)",
-                    backgroundSize: "20px 20px",
-                    maskImage:
-                      "radial-gradient(circle at 30% 30%, black, transparent 72%)",
-                    WebkitMaskImage:
-                      "radial-gradient(circle at 30% 30%, black, transparent 72%)",
-                  }}
-                />
-                <img
-                  src="/svg/aboutUs.svg"
-                  alt={t("About us illustration alt")}
-                  style={{
-                    position: "relative",
-                    width: "100%",
-                    height: "auto",
-                    display: "block",
-                  }}
-                />
-              </Flex>
-            </Box>
-          </Reveal>
-
-          <Reveal delay={0.08}>
             <SectionHeading
               align="left"
               eyebrow={t("About us eyebrow")}
@@ -127,9 +54,11 @@ const AboutUs = () => {
                     justify="center"
                     boxSize="6"
                     mr={3}
-                    borderRadius="full"
-                    bg="brand.50"
-                    color="brand.700"
+                    borderRadius="sm"
+                    bg="accent.50"
+                    borderWidth="1px"
+                    borderColor="accent.200"
+                    color="accent.700"
                   >
                     <CheckIcon width={12} height={12} />
                   </Flex>
@@ -139,6 +68,160 @@ const AboutUs = () => {
                 </Flex>
               ))}
             </Stack>
+
+            <Flex
+              mt={8}
+              borderTopWidth="1px"
+              borderColor="ink.200"
+              pt={5}
+              gap={8}
+              wrap="wrap"
+            >
+              {[
+                { value: "VASS6", label: t("About us stat1") },
+                { value: "TIA", label: t("About us stat2") },
+                { value: ".NET", label: t("About us stat3") },
+              ].map((stat) => (
+                <Box key={stat.value}>
+                  <Text
+                    fontFamily="mono"
+                    fontSize="lg"
+                    fontWeight={700}
+                    color="ink.900"
+                    letterSpacing="-0.02em"
+                  >
+                    {stat.value}
+                  </Text>
+                  <Text
+                    mt={1}
+                    fontFamily="mono"
+                    fontSize="10px"
+                    letterSpacing="0.12em"
+                    textTransform="uppercase"
+                    color="ink.500"
+                  >
+                    {stat.label}
+                  </Text>
+                </Box>
+              ))}
+            </Flex>
+          </Reveal>
+
+          <Reveal delay={0.08}>
+            <Box position="relative">
+              <Box
+                position="absolute"
+                top="-0.75rem"
+                left="-0.75rem"
+                w="4rem"
+                h="4rem"
+                borderTopWidth="2px"
+                borderLeftWidth="2px"
+                borderColor="accent.400"
+                pointerEvents="none"
+              />
+              <Box
+                position="absolute"
+                bottom="-0.75rem"
+                right="-0.75rem"
+                w="4rem"
+                h="4rem"
+                borderBottomWidth="2px"
+                borderRightWidth="2px"
+                borderColor="brand.400"
+                pointerEvents="none"
+              />
+
+              <Box
+                position="relative"
+                overflow="hidden"
+                borderWidth="1px"
+                borderColor="ink.200"
+                borderRadius="xl"
+                bg="steel.50"
+                boxShadow="card"
+              >
+                <Flex
+                  align="center"
+                  justify="space-between"
+                  px={4}
+                  py={2.5}
+                  borderBottomWidth="1px"
+                  borderColor="ink.200"
+                  bg="white"
+                >
+                  <Flex align="center" gap={2}>
+                    <Box boxSize="1.5" borderRadius="full" bg="brand.500" />
+                    <Text
+                      fontFamily="mono"
+                      fontSize="10px"
+                      fontWeight={700}
+                      letterSpacing="0.12em"
+                      textTransform="uppercase"
+                      color="ink.500"
+                    >
+                      {t("About us panel label")}
+                    </Text>
+                  </Flex>
+                  <Text fontFamily="mono" fontSize="10px" color="ink.400">
+                    01 / 03
+                  </Text>
+                </Flex>
+
+                <Flex
+                  position="relative"
+                  align="center"
+                  justify="center"
+                  p={{ base: 4, md: 8 }}
+                >
+                  <Box
+                    position="absolute"
+                    inset={0}
+                    opacity={0.5}
+                    pointerEvents="none"
+                    css={{
+                      backgroundImage:
+                        "linear-gradient(rgba(27,94,32,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(27,94,32,0.08) 1px, transparent 1px)",
+                      backgroundSize: "26px 26px",
+                    }}
+                  />
+                  <img
+                    src="/svg/aboutUs.svg"
+                    alt={t("About us illustration alt")}
+                    style={{
+                      position: "relative",
+                      width: "100%",
+                      height: "auto",
+                      display: "block",
+                    }}
+                  />
+                </Flex>
+
+                <Flex
+                  align="center"
+                  justify="space-between"
+                  gap={3}
+                  px={4}
+                  py={2.5}
+                  borderTopWidth="1px"
+                  borderColor="ink.200"
+                  bg="white"
+                >
+                  <Text
+                    fontFamily="mono"
+                    fontSize="10px"
+                    letterSpacing="0.1em"
+                    textTransform="uppercase"
+                    color="ink.500"
+                  >
+                    Standard → Generator → TIA Portal
+                  </Text>
+                  <Text fontFamily="mono" fontSize="10px" color="ink.400">
+                    BMGK
+                  </Text>
+                </Flex>
+              </Box>
+            </Box>
           </Reveal>
         </Grid>
       </Container>

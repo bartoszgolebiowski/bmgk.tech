@@ -18,7 +18,7 @@ const Footer = () => {
   const links = [
     { href: "#aboutUs", label: t("About us") },
     { href: "#services", label: t("Services") },
-    { href: "#ourGoals", label: t("Our goals") },
+    { href: "#platform", label: t("Platform") },
     { href: "#products", label: t("Products") },
     { href: "#custom", label: t("Custom") },
     { href: "#downloads", label: t("Downloads") },
@@ -34,17 +34,17 @@ const Footer = () => {
               asChild
               display="inline-flex"
               align="center"
-              bg="white"
-              px={4}
-              py={2.5}
-              borderRadius="xl"
               _hover={{ textDecoration: "none", opacity: 0.9 }}
             >
               <a href="#hero">
                 <img
                   src="/svg/BMGK.svg"
                   alt="BMGK.tech"
-                  style={{ height: 26, width: "auto" }}
+                  style={{
+                    height: 30,
+                    width: "auto",
+                    filter: "brightness(1.8) saturate(1.2)",
+                  }}
                 />
               </a>
             </Flex>

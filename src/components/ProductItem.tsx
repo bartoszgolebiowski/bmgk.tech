@@ -17,6 +17,7 @@ import { ExternalLinkIcon } from "./Icons";
 export type Product = {
   title: string;
   titleHref: string;
+  linkLabel?: string;
   subTitle: string;
   badge: string;
   logo: string;
@@ -26,6 +27,7 @@ export type Product = {
 const ProductItem = ({
   title,
   titleHref,
+  linkLabel = "Visit website",
   subTitle,
   badge,
   logo,
@@ -54,7 +56,7 @@ const ProductItem = ({
           justify="center"
           p={8}
           minH={{ base: "160px", md: "100%" }}
-          bg="linear-gradient(135deg, rgba(67,160,71,0.10), rgba(142,36,170,0.10))"
+          bg="linear-gradient(135deg, rgba(67,160,71,0.10), rgba(81,105,127,0.12))"
           borderRightWidth={{ base: 0, md: "1px" }}
           borderBottomWidth={{ base: "1px", md: 0 }}
           borderColor="ink.100"
@@ -133,7 +135,7 @@ const ProductItem = ({
             _hover={{ bg: "accent.50" }}
           >
             <a href={titleHref} target="_blank" rel="noopener noreferrer">
-              {t("Visit website")}
+              {t(linkLabel)}
               <ExternalLinkIcon width={16} height={16} />
             </a>
           </Button>

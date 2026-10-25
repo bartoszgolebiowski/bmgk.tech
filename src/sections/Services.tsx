@@ -1,5 +1,13 @@
 import * as React from "react";
-import { Box, Button, Container, Flex, Grid, Heading, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Container,
+  Flex,
+  Grid,
+  Heading,
+  Text,
+} from "@chakra-ui/react";
 import { useTranslation } from "next-i18next/pages";
 
 import Reveal from "../components/Reveal";
@@ -8,19 +16,31 @@ import {
   ArrowRightIcon,
   CodeIcon,
   CpuIcon,
-  GlobeIcon,
-  LayersIcon,
   MonitorIcon,
-  PlugIcon,
 } from "../components/Icons";
 
 const SERVICES = [
-  { title: "ServiceIndustrialTitle", description: "ServiceIndustrialDesc", icon: CodeIcon },
-  { title: "ServicePlcTitle", description: "ServicePlcDesc", icon: CpuIcon },
-  { title: "ServiceDesktopTitle", description: "ServiceDesktopDesc", icon: MonitorIcon },
-  { title: "ServiceWebTitle", description: "ServiceWebDesc", icon: GlobeIcon },
-  { title: "ServiceMacroTitle", description: "ServiceMacroDesc", icon: LayersIcon },
-  { title: "ServiceIntegrationTitle", description: "ServiceIntegrationDesc", icon: PlugIcon },
+  {
+    tag: "GENERATOR",
+    title: "ServiceGeneratorTitle",
+    description: "ServiceGeneratorDesc",
+    icon: CodeIcon,
+    href: "#platform",
+  },
+  {
+    tag: "SOFTWARE",
+    title: "ServiceSoftwareTitle",
+    description: "ServiceSoftwareDesc",
+    icon: MonitorIcon,
+    href: "#platform",
+  },
+  {
+    tag: "PLC",
+    title: "ServicePlcTitle",
+    description: "ServicePlcDesc",
+    icon: CpuIcon,
+    href: "#contact",
+  },
 ];
 
 const Services = () => {
@@ -43,65 +63,85 @@ const Services = () => {
           }}
           gap={5}
         >
-          {SERVICES.map(({ title, description, icon: ServiceIcon }, index) => (
-            <Reveal key={title} delay={index * 0.05}>
-              <Box
-                h="100%"
-                position="relative"
-                overflow="hidden"
-                bg="white"
-                borderWidth="1px"
-                borderColor="ink.200"
-                borderRadius="2xl"
-                boxShadow="card"
-                p={{ base: 6, md: 7 }}
-                transition="transform .2s ease, box-shadow .2s ease, border-color .2s ease"
-                _hover={{
-                  transform: "translateY(-4px)",
-                  boxShadow: "cardHover",
-                  borderColor: "brand.200",
-                }}
-              >
-                <Box
-                  position="absolute"
-                  top="-3rem"
-                  right="-3rem"
-                  boxSize="9rem"
-                  borderRadius="full"
-                  bg="radial-gradient(circle, rgba(67,160,71,0.16), transparent 70%)"
-                  pointerEvents="none"
-                />
-                <Text
-                  position="absolute"
-                  top={5}
-                  right={5}
-                  fontSize="xs"
-                  fontWeight={800}
-                  letterSpacing="0.08em"
-                  color="brand.100"
-                >
-                  0{index + 1}
-                </Text>
+          {SERVICES.map(
+            ({ tag, title, description, icon: ServiceIcon, href }, index) => (
+              <Reveal key={title} delay={index * 0.05}>
                 <Flex
-                  align="center"
-                  justify="center"
-                  boxSize="12"
-                  mb={5}
-                  borderRadius="2xl"
-                  bg="linear-gradient(135deg, rgba(67,160,71,0.14), rgba(142,36,170,0.10))"
-                  color="brand.700"
+                  asChild
+                  h="100%"
+                  direction="column"
+                  bg="white"
+                  borderWidth="1px"
+                  borderColor="ink.200"
+                  borderRadius="xl"
+                  boxShadow="card"
+                  p={{ base: 6, md: 7 }}
+                  transition="transform .2s ease, box-shadow .2s ease, border-color .2s ease"
+                  _hover={{
+                    transform: "translateY(-4px)",
+                    boxShadow: "cardHover",
+                    borderColor: "steel.300",
+                    textDecoration: "none",
+                  }}
                 >
-                  <ServiceIcon width={24} height={24} />
+                  <a href={href}>
+                    <Flex justify="space-between" align="flex-start" mb={6}>
+                      <Flex
+                        align="center"
+                        justify="center"
+                        boxSize="12"
+                        borderRadius="md"
+                        bg="ink.900"
+                        color="accent.300"
+                      >
+                        <ServiceIcon width={24} height={24} />
+                      </Flex>
+                      <Text
+                        fontFamily="mono"
+                        fontSize="10px"
+                        fontWeight={700}
+                        letterSpacing="0.14em"
+                        color="ink.400"
+                      >
+                        0{index + 1}
+                      </Text>
+                    </Flex>
+
+                    <Text
+                      fontFamily="mono"
+                      fontSize="10px"
+                      fontWeight={700}
+                      letterSpacing="0.14em"
+                      textTransform="uppercase"
+                      color="accent.600"
+                      mb={2}
+                    >
+                      {tag}
+                    </Text>
+                    <Heading as="h3" size="md" mb={2}>
+                      {t(title)}
+                    </Heading>
+                    <Text color="ink.600" fontSize="sm" lineHeight="tall">
+                      {t(description)}
+                    </Text>
+
+                    <Flex
+                      align="center"
+                      gap={2}
+                      mt="auto"
+                      pt={5}
+                      fontSize="sm"
+                      fontWeight={600}
+                      color="ink.800"
+                    >
+                      {t("Services card link")}
+                      <ArrowRightIcon width={15} height={15} />
+                    </Flex>
+                  </a>
                 </Flex>
-                <Heading as="h3" size="md" mb={2}>
-                  {t(title)}
-                </Heading>
-                <Text color="ink.600" fontSize="sm" lineHeight="tall">
-                  {t(description)}
-                </Text>
-              </Box>
-            </Reveal>
-          ))}
+              </Reveal>
+            )
+          )}
         </Grid>
 
         <Reveal delay={0.1}>
@@ -111,30 +151,51 @@ const Services = () => {
             justify="space-between"
             mt={{ base: 8, md: 12 }}
             p={{ base: 7, md: 9 }}
-            borderRadius="3xl"
-            bg="linear-gradient(120deg, #1b5e20 0%, #2e7d32 55%, #6a1b9a 130%)"
-            boxShadow="card"
+            borderRadius="xl"
+            bg="#0b1520"
+            position="relative"
+            overflow="hidden"
           >
-            <Box maxW="2xl" mb={{ base: 5, md: 0 }}>
+            <Box
+              position="absolute"
+              top="0"
+              left="0"
+              right="0"
+              h="2px"
+              bg="linear-gradient(90deg, transparent, #f7a83a, transparent)"
+              pointerEvents="none"
+            />
+            <Box
+              position="absolute"
+              right="-8rem"
+              top="-8rem"
+              boxSize="18rem"
+              borderRadius="full"
+              bg="radial-gradient(circle, rgba(245,168,58,0.16), transparent 68%)"
+              pointerEvents="none"
+            />
+            <Box maxW="2xl" mb={{ base: 5, md: 0 }} position="relative">
               <Heading as="h3" size="lg" color="white" mb={2}>
                 {t("Cta title")}
               </Heading>
-              <Text color="whiteAlpha.800" lineHeight="tall">
+              <Text color="whiteAlpha.700" lineHeight="tall">
                 {t("Cta description")}
               </Text>
             </Box>
             <Button
               asChild
               size="lg"
-              bg="white"
-              color="brand.700"
-              borderRadius="full"
+              bg="accent.500"
+              color="ink.900"
+              borderRadius="md"
               px={7}
               flexShrink={0}
               display="inline-flex"
               gap={2}
-              _hover={{ textDecoration: "none", bg: "brand.50" }}
-              _active={{ bg: "brand.100" }}
+              fontWeight={700}
+              position="relative"
+              _hover={{ textDecoration: "none", bg: "accent.400" }}
+              _active={{ bg: "accent.600" }}
             >
               <a href="#contact">
                 {t("Cta button")}

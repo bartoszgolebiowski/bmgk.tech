@@ -3,10 +3,13 @@ import { createSystem, defaultConfig, defineConfig } from "@chakra-ui/react";
 const inter =
   "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif";
 
+const mono =
+  "'JetBrains Mono', 'SFMono-Regular', ui-monospace, Menlo, Consolas, 'Liberation Mono', monospace";
+
 const config = defineConfig({
   globalCss: {
     "html, body": {
-      backgroundColor: "#f8faf9",
+      backgroundColor: "#f4f6f5",
       color: "ink.800",
       fontFamily: "body",
     },
@@ -25,6 +28,7 @@ const config = defineConfig({
       fonts: {
         heading: { value: inter },
         body: { value: inter },
+        mono: { value: mono },
       },
       colors: {
         brand: {
@@ -40,16 +44,28 @@ const config = defineConfig({
           900: { value: "#0d2f12" },
         },
         accent: {
-          50: { value: "#f3e5f5" },
-          100: { value: "#e1bee7" },
-          200: { value: "#ce93d8" },
-          300: { value: "#ba68c8" },
-          400: { value: "#ab47bc" },
-          500: { value: "#8e24aa" },
-          600: { value: "#7b1fa2" },
-          700: { value: "#6a1b9a" },
-          800: { value: "#4a148c" },
-          900: { value: "#38006b" },
+          50: { value: "#fff8ec" },
+          100: { value: "#ffedcc" },
+          200: { value: "#ffd899" },
+          300: { value: "#ffc266" },
+          400: { value: "#f7a83a" },
+          500: { value: "#e08a12" },
+          600: { value: "#b86a06" },
+          700: { value: "#8f5205" },
+          800: { value: "#6b3d05" },
+          900: { value: "#4a2a04" },
+        },
+        steel: {
+          50: { value: "#eef2f6" },
+          100: { value: "#dbe3ea" },
+          200: { value: "#b9c7d3" },
+          300: { value: "#8fa3b5" },
+          400: { value: "#6b8298" },
+          500: { value: "#51697f" },
+          600: { value: "#3f5366" },
+          700: { value: "#324352" },
+          800: { value: "#26333f" },
+          900: { value: "#1a242c" },
         },
         ink: {
           50: { value: "#f8fafc" },
@@ -86,6 +102,11 @@ const config = defineConfig({
         },
       },
       button: {
+        base: {
+          fontWeight: 600,
+        },
+      },
+      badge: {
         base: {
           fontWeight: 600,
         },

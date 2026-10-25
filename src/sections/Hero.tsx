@@ -14,14 +14,30 @@ import {
 import { useTranslation } from "next-i18next/pages";
 
 import Reveal from "../components/Reveal";
-import { ArrowRightIcon, CheckIcon } from "../components/Icons";
-import useNumberCarousel from "../utils/hooks/useNumberCarousel";
+import {
+  ArrowRightIcon,
+  CheckIcon,
+  SparklesIcon,
+} from "../components/Icons";
+import { requestContactPrefill } from "../utils/contactPrefill";
 
-const TECHNOLOGIES = ["PLC", "TIA Portal", "VASS6", ".NET", "C#"];
+const TECHNOLOGIES = [
+  "PLC",
+  "TIA Portal",
+  "VASS6",
+  "TIA Openness",
+  ".NET",
+  "C#",
+];
+
+const CONSOLE_STEPS = [
+  "Hero console step1",
+  "Hero console step2",
+  "Hero console step3",
+];
 
 const Hero = () => {
   const { t } = useTranslation();
-  const [current] = useNumberCarousel(3);
 
   return (
     <Box
@@ -31,69 +47,72 @@ const Hero = () => {
       overflow="hidden"
       pt={{ base: 28, md: 36 }}
       pb={{ base: 16, md: 24 }}
-      bg="linear-gradient(180deg, #eef7ef 0%, #f8faf9 55%, #f8faf9 100%)"
+      bg="#08111b"
+      color="white"
     >
-      {/* Decorative background glows */}
-      <Box
-        position="absolute"
-        top="-14rem"
-        right="-10rem"
-        w="34rem"
-        h="34rem"
-        borderRadius="full"
-        bg="radial-gradient(circle, rgba(67,160,71,0.20), rgba(67,160,71,0) 70%)"
-        pointerEvents="none"
-      />
-      <Box
-        position="absolute"
-        bottom="-18rem"
-        left="-12rem"
-        w="30rem"
-        h="30rem"
-        borderRadius="full"
-        bg="radial-gradient(circle, rgba(142,36,170,0.14), rgba(142,36,170,0) 70%)"
-        pointerEvents="none"
-      />
+      {/* Blueprint grid + signal lights: industrial, not decorative. */}
       <Box
         position="absolute"
         inset={0}
-        opacity={0.38}
+        opacity={0.5}
         pointerEvents="none"
         css={{
           backgroundImage:
-            "radial-gradient(rgba(27,94,32,0.16) 1px, transparent 1px)",
-          backgroundSize: "22px 22px",
+            "linear-gradient(rgba(148,163,184,0.10) 1px, transparent 1px), linear-gradient(90deg, rgba(148,163,184,0.10) 1px, transparent 1px)",
+          backgroundSize: "56px 56px",
           maskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.8), transparent 72%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.35) 70%, transparent)",
           WebkitMaskImage:
-            "linear-gradient(180deg, rgba(0,0,0,0.8), transparent 72%)",
+            "linear-gradient(180deg, rgba(0,0,0,0.9), rgba(0,0,0,0.35) 70%, transparent)",
         }}
+      />
+      <Box
+        position="absolute"
+        top="-18rem"
+        right="-12rem"
+        w="42rem"
+        h="42rem"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(245,168,58,0.16), rgba(245,168,58,0) 68%)"
+        pointerEvents="none"
+      />
+      <Box
+        position="absolute"
+        bottom="-22rem"
+        left="-14rem"
+        w="40rem"
+        h="40rem"
+        borderRadius="full"
+        bg="radial-gradient(circle, rgba(67,160,71,0.16), rgba(67,160,71,0) 68%)"
+        pointerEvents="none"
       />
 
       <Container maxW="6xl" position="relative">
         <Grid
           templateColumns={{ base: "1fr", lg: "1.05fr 0.95fr" }}
           alignItems="center"
-          gap={{ base: 12, lg: 16 }}
+          gap={{ base: 14, lg: 16 }}
         >
           <Box>
             <Reveal>
-              <Badge
-                bg="white"
-                color="brand.700"
-                borderWidth="1px"
-                borderColor="brand.100"
-                borderRadius="full"
-                px={3}
-                py={1.5}
-                fontSize="xs"
-                fontWeight={700}
-                letterSpacing="0.06em"
-                textTransform="uppercase"
-                boxShadow="0 1px 2px rgba(15,23,42,0.05)"
-              >
-                {t("Hero badge")}
-              </Badge>
+              <Flex align="center" gap={3}>
+                <Box
+                  boxSize="2"
+                  borderRadius="full"
+                  bg="brand.400"
+                  boxShadow="0 0 0 4px rgba(102,187,106,0.16)"
+                />
+                <Text
+                  fontFamily="mono"
+                  fontSize="xs"
+                  fontWeight={700}
+                  letterSpacing="0.16em"
+                  textTransform="uppercase"
+                  color="whiteAlpha.700"
+                >
+                  {t("Hero eyebrow")}
+                </Text>
+              </Flex>
             </Reveal>
 
             <Reveal delay={0.06}>
@@ -101,23 +120,22 @@ const Hero = () => {
                 as="h1"
                 mt={6}
                 fontSize={{ base: "4xl", sm: "5xl", lg: "6xl" }}
-                lineHeight="1.05"
+                lineHeight="1.02"
+                letterSpacing="-0.035em"
               >
-                {t("Welcome")}
+                {t("Hero title line1")}
                 <Box
                   as="span"
-                  key={current}
                   display="block"
-                  className="rotating-text"
                   css={{
                     background:
-                      "linear-gradient(92deg, #2e7d32 0%, #43a047 45%, #8e24aa 100%)",
+                      "linear-gradient(92deg, #ffc266 0%, #f7a83a 55%, #e08a12 100%)",
                     WebkitBackgroundClip: "text",
                     backgroundClip: "text",
                     color: "transparent",
                   }}
                 >
-                  {t(`Welcome${current}`)}
+                  {t("Hero title line2")}
                 </Box>
               </Heading>
             </Reveal>
@@ -126,7 +144,7 @@ const Hero = () => {
               <Text
                 mt={6}
                 fontSize={{ base: "lg", md: "xl" }}
-                color="ink.600"
+                color="whiteAlpha.800"
                 maxW="xl"
                 lineHeight="tall"
               >
@@ -145,18 +163,24 @@ const Hero = () => {
                   asChild
                   size="lg"
                   px={7}
-                  bg="brand.600"
-                  color="white"
-                  borderRadius="full"
+                  bg="accent.500"
+                  color="ink.900"
+                  borderRadius="md"
                   display="inline-flex"
                   gap={2}
+                  fontWeight={700}
                   _hover={{
                     textDecoration: "none",
-                    bg: "brand.700",
+                    bg: "accent.400",
                     transform: "translateY(-1px)",
                   }}
                 >
-                  <a href="#contact">
+                  <a
+                    href="#contact"
+                    onClick={() =>
+                      requestContactPrefill(t("Hero prefill"))
+                    }
+                  >
                     {t("Hero cta primary")}
                     <ArrowRightIcon width={18} height={18} />
                   </a>
@@ -166,50 +190,123 @@ const Hero = () => {
                   size="lg"
                   px={7}
                   variant="outline"
-                  borderColor="brand.300"
-                  color="brand.700"
-                  bg="white"
-                  borderRadius="full"
-                  _hover={{ textDecoration: "none", bg: "brand.50" }}
+                  borderColor="whiteAlpha.400"
+                  color="white"
+                  bg="transparent"
+                  borderRadius="md"
+                  _hover={{ textDecoration: "none", bg: "whiteAlpha.100" }}
                 >
-                  <a href="#products">{t("Hero cta secondary")}</a>
+                  <a href="#platform">
+                    {t("Hero cta secondary")}
+                    <ArrowRightIcon width={18} height={18} />
+                  </a>
                 </Button>
               </Flex>
             </Reveal>
 
-            <Reveal delay={0.24}>
-              <Box mt={10}>
+            <Reveal delay={0.2}>
+              <Flex align="center" gap={2.5} mt={4}>
+                <Box boxSize="1.5" borderRadius="full" bg="accent.400" />
                 <Text
-                  fontSize="xs"
-                  fontWeight={700}
+                  fontFamily="mono"
+                  fontSize="11px"
                   letterSpacing="0.08em"
                   textTransform="uppercase"
-                  color="ink.500"
-                  mb={3}
+                  color="whiteAlpha.500"
                 >
-                  {t("Technologies")}
+                  {t("Hero availability")}
                 </Text>
-                <Wrap gap={2}>
-                  {TECHNOLOGIES.map((technology) => (
-                    <WrapItem key={technology}>
-                      <Badge
-                        bg="white"
-                        color="ink.700"
-                        borderWidth="1px"
-                        borderColor="ink.200"
-                        borderRadius="full"
-                        px={3}
-                        py={1}
-                        fontSize="xs"
-                        fontWeight={600}
-                        textTransform="none"
-                      >
-                        {technology}
-                      </Badge>
-                    </WrapItem>
-                  ))}
-                </Wrap>
-              </Box>
+              </Flex>
+            </Reveal>
+
+            <Reveal delay={0.24}>
+              <Grid
+                templateColumns={{ base: "1fr", sm: "repeat(2, 1fr)" }}
+                gap={3}
+                mt={10}
+                maxW="xl"
+              >
+                <Box
+                  p={4}
+                  bg="whiteAlpha.50"
+                  borderWidth="1px"
+                  borderColor="whiteAlpha.200"
+                  borderRadius="lg"
+                >
+                  <Flex align="center" gap={2} mb={2}>
+                    <Box boxSize="2" borderRadius="full" bg="brand.400" />
+                    <Text
+                      fontFamily="mono"
+                      fontSize="10px"
+                      fontWeight={700}
+                      letterSpacing="0.12em"
+                      textTransform="uppercase"
+                      color="brand.300"
+                    >
+                      {t("Hero core tag")}
+                    </Text>
+                  </Flex>
+                  <Text fontWeight={700} color="white" fontSize="sm">
+                    {t("Hero core title")}
+                  </Text>
+                  <Text mt={1} fontSize="sm" color="whiteAlpha.600" lineHeight="tall">
+                    {t("Hero core description")}
+                  </Text>
+                </Box>
+
+                <Box
+                  p={4}
+                  bg="rgba(245,168,58,0.07)"
+                  borderWidth="1px"
+                  borderColor="rgba(245,168,58,0.28)"
+                  borderRadius="lg"
+                >
+                  <Flex align="center" gap={2} mb={2}>
+                    <SparklesIcon width={12} height={12} color="#ffc266" />
+                    <Text
+                      fontFamily="mono"
+                      fontSize="10px"
+                      fontWeight={700}
+                      letterSpacing="0.12em"
+                      textTransform="uppercase"
+                      color="accent.300"
+                    >
+                      {t("Hero ai tag")}
+                    </Text>
+                  </Flex>
+                  <Text fontWeight={700} color="white" fontSize="sm">
+                    {t("Hero ai title")}
+                  </Text>
+                  <Text mt={1} fontSize="sm" color="whiteAlpha.600" lineHeight="tall">
+                    {t("Hero ai description")}
+                  </Text>
+                </Box>
+              </Grid>
+            </Reveal>
+
+            <Reveal delay={0.3}>
+              <Wrap gap={2} mt={10}>
+                {TECHNOLOGIES.map((technology) => (
+                  <WrapItem key={technology}>
+                    <Badge
+                      bg="whiteAlpha.50"
+                      color="whiteAlpha.700"
+                      borderWidth="1px"
+                      borderColor="whiteAlpha.200"
+                      borderRadius="sm"
+                      px={2.5}
+                      py={1}
+                      fontFamily="mono"
+                      fontSize="10px"
+                      fontWeight={600}
+                      letterSpacing="0.06em"
+                      textTransform="uppercase"
+                    >
+                      {technology}
+                    </Badge>
+                  </WrapItem>
+                ))}
+              </Wrap>
             </Reveal>
           </Box>
 
@@ -217,94 +314,164 @@ const Hero = () => {
             <Box position="relative">
               <Box
                 position="absolute"
-                top="-1rem"
-                right="-1rem"
-                w="70%"
-                h="70%"
-                borderRadius="3xl"
-                bg="linear-gradient(135deg, rgba(67,160,71,0.18), rgba(142,36,170,0.18))"
-                transform="rotate(4deg)"
+                inset="-1px"
+                borderRadius="2xl"
+                bg="linear-gradient(135deg, rgba(245,168,58,0.35), rgba(67,160,71,0.2), transparent 65%)"
+                pointerEvents="none"
               />
               <Box
                 position="relative"
-                bg="white"
+                bg="#050b12"
                 borderWidth="1px"
-                borderColor="ink.200"
-                borderRadius="3xl"
-                boxShadow="card"
-                p={{ base: 5, md: 8 }}
+                borderColor="whiteAlpha.200"
+                borderRadius="2xl"
+                overflow="hidden"
+                boxShadow="0 40px 90px -40px rgba(0,0,0,0.9)"
               >
-                <img
-                  src="/svg/factoryHome.svg"
-                  alt={t("Hero illustration alt")}
-                  style={{ width: "100%", height: "auto", display: "block" }}
-                />
+                <Flex
+                  align="center"
+                  justify="space-between"
+                  gap={4}
+                  px={4}
+                  py={3}
+                  borderBottomWidth="1px"
+                  borderColor="whiteAlpha.200"
+                  bg="whiteAlpha.50"
+                >
+                  <Flex align="center" gap={2}>
+                    <Box boxSize="2.5" borderRadius="full" bg="#ff5f56" />
+                    <Box boxSize="2.5" borderRadius="full" bg="#ffbd2e" />
+                    <Box boxSize="2.5" borderRadius="full" bg="#27c93f" />
+                  </Flex>
+                  <Text
+                    fontFamily="mono"
+                    fontSize="11px"
+                    color="whiteAlpha.600"
+                    letterSpacing="0.04em"
+                  >
+                    {t("Hero console title")}
+                  </Text>
+                  <Text
+                    fontFamily="mono"
+                    fontSize="10px"
+                    color="brand.300"
+                    letterSpacing="0.08em"
+                    textTransform="uppercase"
+                  >
+                    VASS6
+                  </Text>
+                </Flex>
+
+                <Box p={{ base: 5, md: 6 }} fontFamily="mono" fontSize="sm">
+                  <Text color="whiteAlpha.400" fontSize="xs">
+                    {"// "}
+                    {t("Hero console caption")}
+                  </Text>
+
+                  <Text mt={4} color="brand.300" lineHeight="tall">
+                    <Box as="span" color="whiteAlpha.500">
+                      $
+                    </Box>{" "}
+                    {t("Hero console command")}
+                  </Text>
+
+                  <Box mt={4}>
+                    {CONSOLE_STEPS.map((step) => (
+                      <Flex key={step} align="center" gap={2.5} mb={2.5}>
+                        <CheckIcon width={13} height={13} color="#66bb6a" />
+                        <Text color="whiteAlpha.700" fontSize="sm">
+                          {t(step)}
+                        </Text>
+                      </Flex>
+                    ))}
+                    <Flex align="center" gap={2.5} mt={4}>
+                      <ArrowRightIcon width={13} height={13} color="#ffc266" />
+                      <Text color="accent.300" fontSize="sm">
+                        {t("Hero console result")}
+                      </Text>
+                    </Flex>
+                  </Box>
+
+                  <Box
+                    mt={5}
+                    p={3}
+                    borderRadius="md"
+                    bg="whiteAlpha.50"
+                    borderWidth="1px"
+                    borderColor="whiteAlpha.200"
+                  >
+                    <Flex justify="space-between" gap={3} fontSize="11px">
+                      <Text color="whiteAlpha.500" textTransform="uppercase">
+                        {t("Hero console output label")}
+                      </Text>
+                      <Text color="whiteAlpha.800">
+                        {t("Hero console output value")}
+                      </Text>
+                    </Flex>
+                  </Box>
+                </Box>
+
+                <Flex
+                  align="center"
+                  justify="space-between"
+                  gap={3}
+                  px={4}
+                  py={3}
+                  borderTopWidth="1px"
+                  borderColor="whiteAlpha.200"
+                  bg="whiteAlpha.50"
+                >
+                  <Text
+                    fontFamily="mono"
+                    fontSize="10px"
+                    letterSpacing="0.1em"
+                    textTransform="uppercase"
+                    color="whiteAlpha.500"
+                  >
+                    {t("Hero console footer")}
+                  </Text>
+                  <Flex align="center" gap={2}>
+                    <Box boxSize="1.5" borderRadius="full" bg="brand.400" />
+                    <Text
+                      fontFamily="mono"
+                      fontSize="10px"
+                      letterSpacing="0.08em"
+                      textTransform="uppercase"
+                      color="brand.300"
+                    >
+                      {t("Hero ready badge")}
+                    </Text>
+                  </Flex>
+                </Flex>
               </Box>
+
               <Flex
                 display={{ base: "none", md: "flex" }}
                 position="absolute"
                 top="-1rem"
-                right="-1rem"
+                right="-0.75rem"
                 zIndex={1}
                 align="center"
                 gap={2}
-                bg="ink.900"
-                color="white"
+                bg="#0d1a26"
                 borderWidth="1px"
-                borderColor="whiteAlpha.200"
-                borderRadius="full"
-                px={4}
-                py={2.5}
-                boxShadow="0 18px 40px -20px rgba(15,23,42,0.65)"
+                borderColor="rgba(245,168,58,0.35)"
+                borderRadius="md"
+                px={3}
+                py={2}
+                boxShadow="0 18px 40px -20px rgba(0,0,0,0.8)"
               >
-                <Flex
-                  align="center"
-                  justify="center"
-                  boxSize="5"
-                  borderRadius="full"
-                  bg="brand.500"
-                >
-                  <CheckIcon width={11} height={11} />
-                </Flex>
-                <Text fontSize="xs" fontWeight={700} letterSpacing="0.03em">
-                  {t("Hero ready badge")}
-                </Text>
-              </Flex>
-              <Flex
-                display={{ base: "none", md: "flex" }}
-                position="absolute"
-                bottom="-1.25rem"
-                left="-1.25rem"
-                align="center"
-                bg="white"
-                borderWidth="1px"
-                borderColor="ink.200"
-                borderRadius="xl"
-                boxShadow="card"
-                px={4}
-                py={3}
-              >
-                <Flex
-                  align="center"
-                  justify="center"
-                  boxSize="8"
-                  borderRadius="full"
-                  bg="brand.50"
-                  color="brand.700"
-                  mr={3}
+                <SparklesIcon width={14} height={14} color="#ffc266" />
+                <Text
+                  fontFamily="mono"
+                  fontSize="10px"
                   fontWeight={700}
-                  fontSize="sm"
+                  letterSpacing="0.1em"
+                  textTransform="uppercase"
+                  color="accent.300"
                 >
-                  {"</>"}
-                </Flex>
-                <Box>
-                  <Text fontSize="sm" fontWeight={700} color="ink.900">
-                    {t("Hero card title")}
-                  </Text>
-                  <Text fontSize="xs" color="ink.500">
-                    {t("Hero card subtitle")}
-                  </Text>
-                </Box>
+                  {t("Hero console ai badge")}
+                </Text>
               </Flex>
             </Box>
           </Reveal>

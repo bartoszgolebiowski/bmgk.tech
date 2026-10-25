@@ -30,7 +30,7 @@ const CustomSolutions = () => {
       id="custom"
       position="relative"
       overflow="hidden"
-      bg="linear-gradient(180deg, #ffffff 0%, #f2f8f3 100%)"
+      bg="linear-gradient(180deg, #ffffff 0%, #eef1f3 100%)"
       py={{ base: 16, md: 24 }}
     >
       <Box
@@ -50,7 +50,7 @@ const CustomSolutions = () => {
         w="30rem"
         h="30rem"
         borderRadius="full"
-        bg="radial-gradient(circle, rgba(142,36,170,0.12), rgba(142,36,170,0) 70%)"
+        bg="radial-gradient(circle, rgba(81,105,127,0.16), rgba(81,105,127,0) 70%)"
         pointerEvents="none"
       />
       <Box
@@ -272,7 +272,7 @@ const CustomSolutions = () => {
                 left="-6rem"
                 boxSize="16rem"
                 borderRadius="full"
-                bg="radial-gradient(circle, rgba(142,36,170,0.22), transparent 70%)"
+                bg="radial-gradient(circle, rgba(81,105,127,0.30), transparent 70%)"
                 pointerEvents="none"
               />
 
