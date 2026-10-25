@@ -30,13 +30,23 @@ const SECTION_IDS = [
   "contact",
 ];
 
+// The company blog lives outside the landing page.
+const BLOG_URL = "https://bgolebiowski.com/";
+
+type NavLink = {
+  id: string;
+  href: string;
+  label: string;
+  external?: boolean;
+};
+
 const Header = () => {
   const { t } = useTranslation();
   const { open, onOpen, onClose, setOpen } = useDisclosure();
   const scrolled = useScrolled();
   const active = useActiveSection(SECTION_IDS);
 
-  const links = React.useMemo(
+  const links = React.useMemo<NavLink[]>(
     () => [
       { id: "aboutUs", href: "#aboutUs", label: t("About us") },
       { id: "services", href: "#services", label: t("Services") },
@@ -45,6 +55,11 @@ const Header = () => {
       { id: "custom", href: "#custom", label: t("Custom") },
       { id: "downloads", href: "#downloads", label: t("Downloads") },
     ],
+    [t]
+  );
+
+  const externalLinks = React.useMemo<NavLink[]>(
+    () => [{ id: "blog", href: BLOG_URL, label: t("Blog"), external: true }],
     [t]
   );
 
@@ -131,6 +146,19 @@ const Header = () => {
             </HStack>
 
             <HStack gap={{ base: 2, md: 3 }}>
+              <Link
+                href={BLOG_URL}
+                display={{ base: "none", md: "inline-flex" }}
+                fontSize="sm"
+                fontWeight={600}
+                color="whiteAlpha.800"
+                _hover={{ color: "white", textDecoration: "none" }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                {t("Blog")}
+              </Link>
+
               <Box display={{ base: "none", md: "block" }}>
                 <LanguageSelect tone="dark" />
               </Box>
@@ -200,17 +228,20 @@ const Header = () => {
             </Drawer.Header>
             <Drawer.Body>
               <Stack as="nav" aria-label={t("Main navigation")} gap={1} mt={4}>
-                {[
+                {([
                   ...links,
+                  ...externalLinks,
                   { id: "contact", href: "#contact", label: t("Contact") },
-                ].map((link) => {
+                ] as NavLink[]).map((link) => {
                   const isActive = active === link.id;
 
                   return (
                     <Link
                       key={link.href}
                       href={link.href}
-                      onClick={onClose}
+                      {...(link.external
+                        ? { target: "_blank", rel: "noopener noreferrer" }
+                        : { onClick: onClose })}
                       px={4}
                       py={3}
                       borderRadius="xl"
