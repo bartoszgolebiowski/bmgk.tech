@@ -11,7 +11,7 @@ import { useTranslation } from "next-i18next/pages";
 
 import Reveal from "../../components/Reveal";
 import { ArrowRightIcon, ExternalLinkIcon } from "../../components/Icons";
-import { PORTAL_URL } from "../../utils/links";
+import { VASS_APP_URL } from "../../utils/links";
 
 const VassCta = () => {
   const { t } = useTranslation();
@@ -84,7 +84,7 @@ const VassCta = () => {
                     transform: "translateY(-1px)",
                   }}
                 >
-                  <a href={PORTAL_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={VASS_APP_URL} target="_blank" rel="noopener noreferrer">
                     {t("Vass cta primary")}
                     <ExternalLinkIcon width={18} height={18} />
                   </a>
