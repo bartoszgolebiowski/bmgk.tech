@@ -21,7 +21,7 @@ import {
   SlidersIcon,
   SparklesIcon,
 } from "../components/Icons";
-import { VASS6_DOCS_URL } from "../utils/links";
+import { VASS_DOCS_URL } from "../utils/links";
 
 const TOOLS = [
   {
@@ -181,7 +181,7 @@ const Platform = () => {
               }}
             >
               <a
-                href={VASS6_DOCS_URL}
+                href={VASS_DOCS_URL}
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -282,7 +282,7 @@ const Platform = () => {
                   >
                     {[
                       { label: "Platform preview field1", value: "Line-42" },
-                      { label: "Platform preview field2", value: "VASS6" },
+                      { label: "Platform preview field2", value: "VASS" },
                       { label: "Platform preview field3", value: "TIA Portal" },
                       { label: "Platform preview field4", value: "TIA project" },
                     ].map((field) => (

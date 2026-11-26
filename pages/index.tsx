@@ -47,7 +47,7 @@ function Home() {
         <meta name="description" content={description} />
         <meta
           name="keywords"
-          content="PLC, automatyzacja, automatyka przemysłowa, VASS6, TIA Portal, TIA Openness, .NET, LAD, generator kodu PLC, AI"
+          content="PLC, automatyzacja, automatyka przemysłowa, VASS, TIA Portal, TIA Openness, .NET, LAD, generator kodu PLC, AI"
         />
         <meta name="robots" content="index, follow" />
         <meta name="author" content="BMGK.tech" />

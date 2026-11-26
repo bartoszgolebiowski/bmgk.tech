@@ -78,7 +78,7 @@ const AboutUs = () => {
               wrap="wrap"
             >
               {[
-                { value: "VASS6", label: t("About us stat1") },
+                { value: "VASS", label: t("About us stat1") },
                 { value: "TIA", label: t("About us stat2") },
                 { value: ".NET", label: t("About us stat3") },
               ].map((stat) => (

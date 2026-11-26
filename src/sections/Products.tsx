@@ -5,12 +5,12 @@ import { useTranslation } from "next-i18next/pages";
 import ProductItem, { Product } from "../components/ProductItem";
 import Reveal from "../components/Reveal";
 import SectionHeading from "../components/SectionHeading";
-import { VASS6_DOCS_URL } from "../utils/links";
+import { VASS_PAGE } from "../utils/links";
 
 const PRODUCTS: Product[] = [
   {
     title: "Product1",
-    titleHref: VASS6_DOCS_URL,
+    titleHref: VASS_PAGE,
     linkLabel: "Product1 link",
     subTitle: "Product1 Description",
     badge: "Product1 badge",

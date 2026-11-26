@@ -75,13 +75,13 @@ All visible text is translated in `public/static/locales/en/common.json` and `pu
 
 The page order is defined in `pages/index.tsx`: Hero → About → Services → Platform → Products → Custom solutions → Downloads → Contact.
 
-The tools section lives in `src/sections/Downloads.tsx`. VASS6 PLC Creator is not publicly released: the card asks for early access (pre-filled contact form) and links to the public documentation. The TIA Project Importer installer is shown as “coming soon” until a download URL is added.
+The tools section lives in `src/sections/Downloads.tsx`. VASS6 PLC Creator is not publicly released: the card is marked “coming soon” but still asks for early access (pre-filled contact form) and links to the public documentation. The TIA Project Importer installer is shown as “coming soon” until a download URL is added.
 
-`src/sections/Platform.tsx` holds the “all your tools in one place” message and a mock of the generator UI. The mock is a placeholder: drop real product screenshots into that frame when they are available (there is a comment marking the spot). Tool statuses (Early access / Soon / In development) are translation keys, so update both locale files when a product ships.
+`src/sections/Platform.tsx` holds the “all your tools in one place” message and a mock of the generator UI. The mock is a placeholder: drop real product screenshots into that frame when they are available (there is a comment marking the spot). Tool statuses are translation keys, so update both locale files when a product ships. VASS PLC Creator, TIA Project Importer and the AI assistant are all unified under a single “Coming soon” status (EN) / “Wkrótce” (PL).
 
 The public documentation URL is defined once in `src/utils/links.ts` (`VASS6_DOCS_URL`). Change it there instead of editing individual sections.
 
-The custom generators and AI premium message lives in `src/sections/CustomSolutions.tsx`. AI-assisted generation is explicitly marked as a premium feature in development; update the badge and copy when it becomes available.
+The custom generators and AI premium message lives in `src/sections/CustomSolutions.tsx`. AI-assisted generation is explicitly marked as a premium “coming soon” feature; update the badge and copy when it becomes available.
 
 Both calls to action in that section pre-fill the contact form via `src/utils/contactPrefill.ts`, so inquiries arrive already labeled as a custom generator or an AI early-access request. The matching template text is stored under `Custom card1 prefill` / `Custom card2 prefill` in the locale files.
 

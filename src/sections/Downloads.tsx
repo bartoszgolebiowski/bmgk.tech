@@ -26,7 +26,7 @@ import {
   UploadIcon,
 } from "../components/Icons";
 import { requestContactPrefill } from "../utils/contactPrefill";
-import { VASS6_DOCS_URL } from "../utils/links";
+import { VASS_DOCS_URL } from "../utils/links";
 
 const STEPS = [
   {
@@ -194,7 +194,7 @@ const Downloads = () => {
                   textTransform="uppercase"
                   color="whiteAlpha.500"
                 >
-                  VASS6
+                  VASS
                 </Text>
                 <Text fontSize="sm" color="whiteAlpha.900" lineHeight="short">
                   {t("Download tutorial coming")}
@@ -254,22 +254,22 @@ const Downloads = () => {
                   fontWeight={700}
                 >
                   <Box boxSize="1.5" borderRadius="full" bg="brand.300" />
-                  {t("Download VASS6 badge")}
+                  {t("Download VASS badge")}
                 </Badge>
               </Flex>
 
               <Heading as="h3" size="lg" mt={6} color="white">
-                {t("Download VASS6 title")}
+                {t("Download VASS title")}
               </Heading>
               <Text mt={3} color="whiteAlpha.700" lineHeight="tall">
-                {t("Download VASS6 description")}
+                {t("Download VASS description")}
               </Text>
 
               <Stack gap={2.5} mt={6}>
                 {[
-                  t("Download VASS6 bullet1"),
-                  t("Download VASS6 bullet2"),
-                  t("Download VASS6 bullet3"),
+                  t("Download VASS bullet1"),
+                  t("Download VASS bullet2"),
+                  t("Download VASS bullet3"),
                 ].map((item) => (
                   <Flex key={item} align="flex-start">
                     <Flex
@@ -310,10 +310,10 @@ const Downloads = () => {
                   <a
                     href="#contact"
                     onClick={() =>
-                      requestContactPrefill(t("Download VASS6 prefill"))
+                      requestContactPrefill(t("Download VASS prefill"))
                     }
                   >
-                    {t("Download VASS6 cta")}
+                    {t("Download VASS cta")}
                     <ArrowRightIcon width={16} height={16} />
                   </a>
                 </Button>
@@ -330,7 +330,7 @@ const Downloads = () => {
                   _hover={{ bg: "whiteAlpha.100", textDecoration: "none" }}
                 >
                   <a
-                    href={VASS6_DOCS_URL}
+                    href={VASS_DOCS_URL}
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -340,7 +340,7 @@ const Downloads = () => {
                 </Button>
               </Flex>
               <Text mt={3} fontSize="xs" color="whiteAlpha.500">
-                {t("Download VASS6 note")}
+                {t("Download VASS note")}
               </Text>
             </Box>
           </Reveal>

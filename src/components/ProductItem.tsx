@@ -35,6 +35,12 @@ const ProductItem = ({
 }: Product) => {
   const { t } = useTranslation();
   const productName = t(title);
+  const isInternal = titleHref.startsWith("/");
+
+  // Internal pages open in the same tab; external sites open in a new tab.
+  const externalProps = isInternal
+    ? {}
+    : { target: "_blank" as const, rel: "noopener noreferrer" };
 
   return (
     <Box
@@ -105,8 +111,7 @@ const ProductItem = ({
           <Heading as="h3" size="lg" mt={3}>
             <Link
               href={titleHref}
-              target="_blank"
-              rel="noopener noreferrer"
+              {...externalProps}
               _hover={{ color: "accent.600", textDecoration: "none" }}
             >
               {productName}
@@ -134,9 +139,9 @@ const ProductItem = ({
             gap={2}
             _hover={{ bg: "accent.50" }}
           >
-            <a href={titleHref} target="_blank" rel="noopener noreferrer">
+            <a href={titleHref} {...externalProps}>
               {t(linkLabel)}
-              <ExternalLinkIcon width={16} height={16} />
+              {!isInternal && <ExternalLinkIcon width={16} height={16} />}
             </a>
           </Button>
         </Box>

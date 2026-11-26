@@ -24,7 +24,7 @@ import { requestContactPrefill } from "../utils/contactPrefill";
 const TECHNOLOGIES = [
   "PLC",
   "TIA Portal",
-  "VASS6",
+  "VASS",
   "TIA Openness",
   ".NET",
   "C#",
@@ -358,7 +358,7 @@ const Hero = () => {
                     letterSpacing="0.08em"
                     textTransform="uppercase"
                   >
-                    VASS6
+                    VASS
                   </Text>
                 </Flex>
 
