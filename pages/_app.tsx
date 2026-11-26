@@ -5,6 +5,7 @@ import { appWithTranslation } from "next-i18next/pages";
 
 import system from "../src/theme";
 import Toaster from "../src/components/Toaster";
+import CookieBanner from "../src/components/CookieBanner";
 import "../styles.css";
 
 function MyApp({ Component, pageProps }: AppProps) {
@@ -12,6 +13,7 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ChakraProvider value={system}>
       <Component {...pageProps} />
       <Toaster />
+      <CookieBanner />
     </ChakraProvider>
   );
 }
