@@ -223,7 +223,7 @@
   "Vass title line1": "Generuj kod PLC",
   "Vass title line2": "w minuty, nie tygodnie.",
   "Vass description": "VASS PLC Creator zamienia Twoje dane wejściowe — tagi EPLAN, macierz bezpieczeństwa i strukturę — w kompletny projekt dla TIA Portal gotowy do importu. Zbudowany pod standard VASS, bezpłatny w wersji podstawowej, z AI jako warstwą premium.",
-  "Vass cta primary": "Otwórz aplikację",
+  "Vass cta primary": "Otwórz dokumentację",
   "Vass cta secondary": "Skontaktuj się",
   "Vass availability": "Bezpłatny core · premium AI wkrótce",
   "Portal coming soon": "Portal w wersji beta — kolejne funkcje wkrótce.",
@@ -301,8 +301,8 @@
   "Vass premium note": "Funkcje AI pojawią się wkrótce — poinformujemy tutaj o dostępności.",
 
   "Vass cta title": "Zacznij generować z VASS",
-  "Vass cta description": "Podstawowy generator jest bezpłatny. Otwórz go w aplikacji i zbuduj pierwszy projekt albo opowiedz nam o swojej linii.",
-  "Vass cta primary": "Otwórz aplikację",
+  "Vass cta description": "Podstawowy generator jest bezpłatny. Zapoznaj się z dokumentacją albo opowiedz nam o swojej linii.",
+  "Vass cta primary": "Otwórz dokumentację",
   "Vass cta secondary": "Skontaktuj się",
   "Vass cta note": "Dostęp przyznajemy indywidualnie. Dokumentacja jest publiczna.",
 

@@ -14,6 +14,7 @@ export const VASS_PAGE = "/vass";
 /**
  * Target hosts. The product spans VASS6 (TIA v16) and VASS7 (TIA v20), so the
  * brand is simply "VASS". Keep these in sync with the DNS records.
- * NOTE: the app host is temporary and will change in the future.
+ * NOTE: this host is temporary and will change in the future. It currently
+ * serves the product documentation, not a public app.
  */
 export const VASS_APP_URL = "https://vass6plccreator.bmgk.tech";

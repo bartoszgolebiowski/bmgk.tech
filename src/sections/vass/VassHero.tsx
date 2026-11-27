@@ -19,7 +19,7 @@ import {
   LayersIcon,
   SlidersIcon,
 } from "../../components/Icons";
-import { VASS_APP_URL } from "../../utils/links";
+import { VASS_DOCS_URL } from "../../utils/links";
 
 const STATS = [
   { value: "Vass stat1 value", label: "Vass stat1 label" },
@@ -141,7 +141,7 @@ const VassHero = () => {
                     transform: "translateY(-1px)",
                   }}
                 >
-                  <a href={VASS_APP_URL} target="_blank" rel="noopener noreferrer">
+                  <a href={VASS_DOCS_URL} target="_blank" rel="noopener noreferrer">
                     {t("Vass cta primary")}
                     <ExternalLinkIcon width={18} height={18} />
                   </a>
